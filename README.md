@@ -3,11 +3,23 @@
 A better format for golang's tests when using
 <https://github.com/stretchr/testify>.
 
+We've all been there... a bunch of tests failing and you have no idea where to
+start, because everything looks the same. And that one test failing in the sea
+of passing tests? So frustrating. Not anymore!
+
+With `gotestfmt` you'll see a progress output while tests are being executed.
+Once tests are done, you'll see an output with only the tests that failed.
+Simple and easy!
+
+Here's the before and after:
+
+![An image showing the comparison between the native output versus gotestfmt's](https://github.com/fnando/gotestfmt/raw/main/gotestfmt.png)
+
 ## Install
 
-Download binary for your system from the
-[Releases page](https://github.com/fnando/gotestfmt/releases) and place it
-anywhere on your path.
+Download the binary for your system from the
+[latest release](https://github.com/fnando/gotestfmt/releases/latest) and place
+it anywhere on your path.
 
 ## Usage
 
