@@ -65,23 +65,23 @@ func CreateDotReporter() Reporter {
 	)
 
 	if color, exists = os.LookupEnv("GOTESTFMT_FAIL_COLOR"); exists {
-		reporter.FailColor = color
+		reporter.FailColor = "\u001b[" + color + "m"
 	}
 
 	if color, exists = os.LookupEnv("GOTESTFMT_PASS_COLOR"); exists {
-		reporter.PassColor = color
+		reporter.PassColor = "\u001b[" + color + "m"
 	}
 
 	if color, exists = os.LookupEnv("GOTESTFMT_SKIP_COLOR"); exists {
-		reporter.SkipColor = color
+		reporter.SkipColor = "\u001b[" + color + "m"
 	}
 
 	if color, exists = os.LookupEnv("GOTESTFMT_TEXT_COLOR"); exists {
-		reporter.TextColor = color
+		reporter.TextColor = "\u001b[" + color + "m"
 	}
 
 	if color, exists = os.LookupEnv("GOTESTFMT_DETAIL_COLOR"); exists {
-		reporter.DetailColor = color
+		reporter.DetailColor = "\u001b[" + color + "m"
 	}
 
 	return reporter
@@ -126,7 +126,7 @@ func (dot DotReporter) Summary(report Report, writer *os.File) {
 		content := strings.Join(lines, "")
 		content = dot.formatOutput(content)
 
-		fmt.Fprintf(writer, "\n%s\n\n", content)
+		fmt.Fprintf(writer, "\n%s\n\n", Color(dot.TextColor, content))
 	}
 
 	testsWord := "tests"
@@ -180,14 +180,14 @@ func (dot DotReporter) formatOutput(text string) string {
 	text = string(re.ReplaceAllFunc([]byte(text), func(repl []byte) []byte {
 		matches := re.FindStringSubmatch(string(repl))
 
-		return []byte(matches[1] + Color(dot.ExpectedColor, matches[2]))
+		return []byte(Color(dot.TextColor, matches[1]) + Color(dot.ExpectedColor, matches[2]))
 	}))
 
 	re = regexp.MustCompile("(?m)^(\\s+actual\\s*:)(.+)")
 	text = string(re.ReplaceAllFunc([]byte(text), func(repl []byte) []byte {
 		matches := re.FindStringSubmatch(string(repl))
 
-		return []byte(matches[1] + Color(dot.ActualColor, matches[2]))
+		return []byte(Color(dot.TextColor, matches[1]) + Color(dot.ActualColor, matches[2]))
 	}))
 
 	return text

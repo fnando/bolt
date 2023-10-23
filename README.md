@@ -42,6 +42,20 @@ Usage of gotestfmt:
       Show version
 ```
 
+### Overriding colors
+
+You can override the colors by setting the following env vars:
+
+```bash
+export GOTESTFMT_TEXT_COLOR="30"
+export GOTESTFMT_FAIL_COLOR="31"
+export GOTESTFMT_PASS_COLOR="32"
+export GOTESTFMT_SKIP_COLOR="33"
+export GOTESTFMT_DETAIL_COLOR="34"
+```
+
+To disable color output completely, just set `NO_COLOR=1`.
+
 ## Code of Conduct
 
 Everyone interacting in the gotestfmt project’s codebases, issue trackers, chat
