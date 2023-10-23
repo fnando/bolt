@@ -33,7 +33,10 @@ Options:
 
 ```shell
 $ gotestfmt -h
-Usage of gotestfmt:
+gotestfmt is a tool that generates a better output format for golang tests.
+
+Usage: gotestfmt [OPTIONS]
+
   -cover
       Show module coverage (default true)
   -cover-count int
@@ -44,8 +47,20 @@ Usage of gotestfmt:
       Fast fail
   -reporter string
       Choose report type (dot, json) (default "dot")
-  -version
-      Show version
+
+Other commands:
+
+  gotestfmt download-url
+      display the latest binary download url
+
+  gotestfmt update
+      download the latest binary and replace the running one
+
+  gotestfmt version
+      display the version
+
+
+For more info, visit https://github.com/fnando/gotestfmt
 ```
 
 To get the latest download url for your binary, you can use
@@ -63,7 +78,7 @@ export GOTESTFMT_SKIP_COLOR="33"
 export GOTESTFMT_DETAIL_COLOR="34"
 export GOTESTFMT_COVERAGE_BAD_COLOR="31"  # coverage < 60%
 export GOTESTFMT_COVERAGE_GOOD_COLOR="32" # coverage > 70%
-export GOTESTFMT_COVERAGE_OK_COLOR="33" # coverage between 100-70%
+export GOTESTFMT_COVERAGE_OK_COLOR="33"   # coverage between 100-70%
 ```
 
 To disable color output completely, just set `NO_COLOR=1`.
