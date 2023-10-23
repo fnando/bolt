@@ -1,7 +1,6 @@
 # gotestfmt
 
-A better format for golang's tests when using
-<https://github.com/stretchr/testify>.
+A better format output for golang's tests.
 
 We've all been there... a bunch of tests failing and you have no idea where to
 start, because everything looks the same. And that one test failing in the sea
