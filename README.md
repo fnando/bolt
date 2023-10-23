@@ -42,6 +42,9 @@ Usage of gotestfmt:
       Show version
 ```
 
+To get the latest download url for your binary, you can use
+`gotestfmt download-url`.
+
 ### Overriding colors
 
 You can override the colors by setting the following env vars:

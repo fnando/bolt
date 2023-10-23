@@ -6,7 +6,10 @@ build() {
   os=$1
   arch=$2
 
+  git checkout ./gotestfmt/arch.go &> /dev/null || true
+  printf "package gotestfmt\nvar Arch = \"$os-$arch\"\n" > ./gotestfmt/arch.go
   env GOOS=$os GOARCH=$arch go build -o build/gotestfmt-$os-$arch cmd/gotestfmt.go
+  git checkout ./gotestfmt/arch.go &> /dev/null || true
 }
 
 rm -rf build

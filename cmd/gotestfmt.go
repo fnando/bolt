@@ -5,7 +5,9 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	"io"
 	"log"
+	"net/http"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -16,6 +18,8 @@ import (
 	g "github.com/fnando/gotestfmt/gotestfmt"
 	"golang.org/x/exp/slices"
 )
+
+var cliVersion = "0.1.2"
 
 type Data map[string]any
 
@@ -43,8 +47,23 @@ func main() {
 	flag.BoolVar(&showVersion, "version", false, "Show version")
 	flag.Parse()
 
+	if len(os.Args) >= 2 {
+		cmd := os.Args[1]
+
+		if cmd == "download-url" {
+			fmt.Print(downloadUrl())
+			os.Exit(0)
+		} else if cmd == "update" {
+			update()
+			os.Exit(0)
+		} else if cmd == "version" {
+			fmt.Println(cliVersion)
+			os.Exit(0)
+		}
+	}
+
 	if showVersion {
-		fmt.Println("0.1.2")
+		fmt.Println(cliVersion)
 		os.Exit(0)
 	}
 
@@ -171,5 +190,38 @@ func main() {
 
 	if err := scanner.Err(); err != nil {
 		log.Println(err)
+	}
+}
+
+func downloadUrl() string {
+	return fmt.Sprintf(
+		"https://github.com/fnando/gotestfmt/releases/latest/download/gotestfmt-%s",
+		g.Arch,
+	)
+}
+
+func update() {
+	url := downloadUrl()
+
+	bin, err := os.Executable()
+	if err != nil {
+		panic(err)
+	}
+
+	out, err := os.Create(bin)
+	if err != nil {
+		panic(err)
+	}
+
+	defer out.Close()
+	resp, err := http.Get(url)
+	if err != nil {
+		panic(err)
+	}
+
+	defer resp.Body.Close()
+	_, err = io.Copy(out, resp.Body)
+	if err != nil {
+		panic(err)
 	}
 }
