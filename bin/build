@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -e
+
+build() {
+  os=$1
+  arch=$2
+
+  env GOOS=$os GOARCH=$arch go build -o build/gotestfmt-$os-$arch cmd/gotestfmt.go
+}
+
+rm -rf build
+mkdir -p build
+
+build linux amd64
+build linux arm64
+build darwin arm64
+build darwin amd64
