@@ -17,6 +17,10 @@ func (_ JSONReporter) Progress(test Test, writer *os.File) {
 	// noop
 }
 
+func (_ JSONReporter) Coverage(list []Coverage, writer *os.File) {
+	// noop
+}
+
 func (_ JSONReporter) Summary(report Report, writer *os.File) {
 	output, _ := json.MarshalIndent(report, "", "  ")
 	fmt.Fprintln(writer, string(output))

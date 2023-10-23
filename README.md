@@ -34,7 +34,13 @@ Options:
 ```shell
 $ gotestfmt -h
 Usage of gotestfmt:
-  -fast-fail
+  -cover
+      Show module coverage (default true)
+  -cover-count int
+      Number of coverage items to display (default 10)
+  -cover-threshold float
+      Only show module coverage below this threshold (default 100)
+  -fastfail
       Fast fail
   -reporter string
       Choose report type (dot, json) (default "dot")
@@ -55,6 +61,9 @@ export GOTESTFMT_FAIL_COLOR="31"
 export GOTESTFMT_PASS_COLOR="32"
 export GOTESTFMT_SKIP_COLOR="33"
 export GOTESTFMT_DETAIL_COLOR="34"
+export GOTESTFMT_COVERAGE_BAD_COLOR="31"  # coverage < 60%
+export GOTESTFMT_COVERAGE_GOOD_COLOR="32" # coverage > 70%
+export GOTESTFMT_COVERAGE_OK_COLOR="33" # coverage between 100-70%
 ```
 
 To disable color output completely, just set `NO_COLOR=1`.

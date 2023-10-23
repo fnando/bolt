@@ -11,6 +11,8 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"sort"
+	"strconv"
 	"strings"
 	"time"
 
@@ -37,14 +39,30 @@ func countTestsByStatus(tests []g.Test, status string) int {
 
 func main() {
 	var (
-		reporterName string
-		fastFail     bool
-		showVersion  bool
+		reporterName      string
+		fastFail          bool
+		showCoverage      bool
+		coverageThreshold float64
+		coverageCount     int
 	)
 
+	flag.Usage = func() {
+		w := flag.CommandLine.Output()
+		fmt.Fprintln(w, "\ngotestfmt is a tool that generates a better output format for golang tests.\n")
+		fmt.Fprintln(w, "Usage: gotestfmt [OPTIONS]\n")
+		flag.PrintDefaults()
+		fmt.Fprintln(w, "\nOther commands:\n")
+		fmt.Fprintln(w, "  gotestfmt download-url\n      display the latest binary download url\n")
+		fmt.Fprintln(w, "  gotestfmt update\n      download the latest binary and replace the running one\n")
+		fmt.Fprintln(w, "  gotestfmt version\n      display the version\n")
+		fmt.Fprintln(w, "\nFor more info, visit https://github.com/fnando/gotestfmt")
+	}
+
 	flag.StringVar(&reporterName, "reporter", "dot", "Choose report type (dot, json)")
-	flag.BoolVar(&fastFail, "fast-fail", false, "Fast fail")
-	flag.BoolVar(&showVersion, "version", false, "Show version")
+	flag.BoolVar(&fastFail, "fastfail", false, "Fast fail")
+	flag.BoolVar(&showCoverage, "cover", true, "Show module coverage")
+	flag.Float64Var(&coverageThreshold, "cover-threshold", 100.0, "Only show module coverage below this threshold")
+	flag.IntVar(&coverageCount, "cover-count", 10, "Number of coverage items to display")
 	flag.Parse()
 
 	if len(os.Args) >= 2 {
@@ -59,12 +77,10 @@ func main() {
 		} else if cmd == "version" {
 			fmt.Println(cliVersion)
 			os.Exit(0)
+		} else {
+			flag.Usage()
+			os.Exit(1)
 		}
-	}
-
-	if showVersion {
-		fmt.Println(cliVersion)
-		os.Exit(0)
 	}
 
 	var reporter g.Reporter
@@ -75,6 +91,8 @@ func main() {
 		reporter = g.JSONReporter{}
 	} else {
 		fmt.Fprintln(os.Stderr, "ERROR: expected reporter name to be one of [dot, json]; got", reporterName)
+		flag.Usage()
+		os.Exit(1)
 	}
 
 	stat, err := os.Stdin.Stat()
@@ -85,6 +103,7 @@ func main() {
 
 	if stat.Mode()&os.ModeNamedPipe == 0 {
 		fmt.Fprintln(os.Stderr, "ERROR: No data has been piped into gotestfmt")
+		flag.Usage()
 		os.Exit(1)
 	}
 
@@ -93,10 +112,12 @@ func main() {
 		StartedAt: time.Date(2100, time.January, 31, 23, 59, 59, 0, time.UTC),
 		EndedAt:   time.Date(1970, time.January, 1, 0, 0, 0, 0, time.UTC),
 		Tests:     []g.Test{},
+		Coverage:  []g.Coverage{},
 	}
 	allData := map[string]g.Test{}
 
 	errorTraceRE := regexp.MustCompile("^\\s*Error Trace:\\s*(.+)")
+	coverageRE := regexp.MustCompile("^coverage: ([\\d.]+)% of statements")
 
 	for scanner.Scan() {
 		data := Data{}
@@ -150,6 +171,19 @@ func main() {
 			}
 		}
 
+		if action == "output" && data["Test"] == nil {
+			coverageMatch := coverageRE.FindStringSubmatch(data["Output"].(string))
+
+			if len(coverageMatch) == 2 {
+				val, _ := strconv.ParseFloat(coverageMatch[1], 32)
+
+				report.Coverage = append(report.Coverage, g.Coverage{
+					Package:  data["Package"].(string),
+					Coverage: val,
+				})
+			}
+		}
+
 		if action == "output" && data["Test"] != nil {
 			key := data["Package"].(string) + ":" + data["Test"].(string)
 			test := allData[key]
@@ -185,12 +219,32 @@ func main() {
 	report.FailCount = countTestsByStatus(report.Tests, "fail")
 	report.SkipCount = countTestsByStatus(report.Tests, "skip")
 
+	filteredCoverage := prepareCoverage(report, coverageThreshold)
+
 	reporter.Summary(report, os.Stdout)
+	reporter.Coverage(filteredCoverage[:min(coverageCount, len(filteredCoverage))], os.Stdout)
 	reporter.Exit(report)
 
 	if err := scanner.Err(); err != nil {
 		log.Println(err)
 	}
+}
+
+func prepareCoverage(report g.Report, threshold float64) []g.Coverage {
+	coverageList := report.Coverage
+	sort.SliceStable(coverageList, func(i, j int) bool {
+		return coverageList[i].Coverage < coverageList[j].Coverage
+	})
+
+	filteredCoverage := []g.Coverage{}
+
+	for _, coverage := range coverageList {
+		if coverage.Coverage < threshold {
+			filteredCoverage = append(filteredCoverage, coverage)
+		}
+	}
+
+	return filteredCoverage
 }
 
 func downloadUrl() string {

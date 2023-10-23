@@ -8,13 +8,16 @@ import (
 )
 
 type DotReporter struct {
-	FailColor     string
-	PassColor     string
-	SkipColor     string
-	TextColor     string
-	DetailColor   string
-	ExpectedColor string
-	ActualColor   string
+	FailColor         string
+	PassColor         string
+	SkipColor         string
+	TextColor         string
+	DetailColor       string
+	ExpectedColor     string
+	ActualColor       string
+	CoverageBadColor  string
+	CoverageGoodColor string
+	CoverageOKColor   string
 }
 
 func (dot DotReporter) deindent(lines []string, prefixSize int) []string {
@@ -50,13 +53,16 @@ func (dot DotReporter) deindent(lines []string, prefixSize int) []string {
 
 func CreateDotReporter() Reporter {
 	reporter := DotReporter{
-		FailColor:     "\u001b[31m",
-		PassColor:     "\u001b[32m",
-		SkipColor:     "\u001b[33m",
-		TextColor:     "\u001b[30m",
-		DetailColor:   "\u001b[34m",
-		ExpectedColor: "\u001b[32m",
-		ActualColor:   "\u001b[31m",
+		FailColor:         "\u001b[31m",
+		PassColor:         "\u001b[32m",
+		SkipColor:         "\u001b[33m",
+		TextColor:         "\u001b[30m",
+		DetailColor:       "\u001b[34m",
+		ExpectedColor:     "\u001b[32m",
+		ActualColor:       "\u001b[31m",
+		CoverageBadColor:  "\u001b[31m",
+		CoverageGoodColor: "\u001b[32m",
+		CoverageOKColor:   "\u001b[33m",
 	}
 
 	var (
@@ -82,6 +88,18 @@ func CreateDotReporter() Reporter {
 
 	if color, exists = os.LookupEnv("GOTESTFMT_DETAIL_COLOR"); exists {
 		reporter.DetailColor = "\u001b[" + color + "m"
+	}
+
+	if color, exists = os.LookupEnv("GOTESTFMT_COVERAGE_GOOD_COLOR"); exists {
+		reporter.CoverageGoodColor = "\u001b[" + color + "m"
+	}
+
+	if color, exists = os.LookupEnv("GOTESTFMT_COVERAGE_BAD_COLOR"); exists {
+		reporter.CoverageBadColor = "\u001b[" + color + "m"
+	}
+
+	if color, exists = os.LookupEnv("GOTESTFMT_COVERAGE_OK_COLOR"); exists {
+		reporter.CoverageOKColor = "\u001b[" + color + "m"
 	}
 
 	return reporter
@@ -199,4 +217,36 @@ func (dot DotReporter) formatOutput(text string) string {
 	}))
 
 	return text
+}
+
+func (dot DotReporter) Coverage(list []Coverage, writer *os.File) {
+	count := len(list)
+
+	if count == 0 {
+		return
+	}
+
+	fmt.Fprintf(
+		writer,
+		fmt.Sprintf("\n%s\n\n", Color(dot.TextColor, "Coverage:")),
+	)
+
+	for _, coverage := range list {
+		color := dot.CoverageGoodColor
+
+		if coverage.Coverage < 70.0 {
+			color = dot.CoverageOKColor
+		}
+
+		if coverage.Coverage < 50.0 {
+			color = dot.CoverageBadColor
+		}
+
+		cov := fmt.Sprintf("%.1f", coverage.Coverage)
+		line := fmt.Sprintf("[%+4s%s] %s\n", cov, "%%", coverage.Package)
+
+		fmt.Fprintf(writer, Color(color, line))
+	}
+
+	fmt.Println()
 }

@@ -14,6 +14,7 @@ type Report struct {
 	PassCount   int
 	SkipCount   int
 	Tests       []Test
+	Coverage    []Coverage
 }
 
 type Test struct {
@@ -32,5 +33,11 @@ type Test struct {
 type Reporter interface {
 	Progress(test Test, writer *os.File)
 	Summary(report Report, writer *os.File)
+	Coverage(list []Coverage, writer *os.File)
 	Exit(report Report)
+}
+
+type Coverage struct {
+	Package  string
+	Coverage float64
 }

@@ -9,3 +9,7 @@ import (
 func TestEqualStructPass(t *testing.T) {
 	assert.Equal(t, 1, 1)
 }
+
+func TestSkipTest(t *testing.T) {
+	t.Skip("Skipping this test")
+}
