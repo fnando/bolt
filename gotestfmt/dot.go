@@ -135,10 +135,18 @@ func (dot DotReporter) Summary(report Report, writer *os.File) {
 		testsWord = "test"
 	}
 
+	summaryColor := dot.PassColor
+
+	if report.FailCount > 0 {
+		summaryColor = dot.FailColor
+	} else if report.SkipCount > 0 {
+		summaryColor = dot.SkipColor
+	}
+
 	fmt.Fprintf(
 		writer,
 		Color(
-			dot.FailColor,
+			summaryColor,
 			fmt.Sprintf(
 				"Finished in %v, %d %s, %d failed, %d skipped\n",
 				report.ElapsedTime,

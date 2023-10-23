@@ -1,4 +1,4 @@
-package equal
+package failed
 
 import (
 	"errors"
