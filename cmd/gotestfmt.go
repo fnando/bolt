@@ -39,6 +39,7 @@ func main() {
 	)
 
 	flag.StringVar(&reporterName, "reporter", "dot", "Choose report type (dot, json)")
+	flag.BoolVar(&fastFail, "fast-fail", false, "Fast fail")
 	flag.BoolVar(&showVersion, "version", false, "Show version")
 	flag.Parse()
 
@@ -125,7 +126,7 @@ func main() {
 			report.Tests = append(report.Tests, test)
 			reporter.Progress(test, os.Stdout)
 
-			if fastFail {
+			if fastFail && test.Status == "fail" {
 				break
 			}
 		}

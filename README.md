@@ -5,6 +5,10 @@ A better format for golang's tests when using
 
 ## Install
 
+Download binary for your system from the
+[Releases page](https://github.com/fnando/gotestfmt/releases) and place it
+anywhere on your path.
+
 ## Usage
 
 Pipe test results in JSON format into this tool:
@@ -22,6 +26,8 @@ Usage of gotestfmt:
       Fast fail
   -reporter string
       Choose report type (dot, json) (default "dot")
+  -version
+      Show version
 ```
 
 ## Code of Conduct

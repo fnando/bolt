@@ -22,8 +22,8 @@ func (dot DotReporter) deindent(lines []string, prefixSize int) []string {
 		return lines
 	}
 
-	re := regexp.MustCompile("^(\\s+)Error:(\\s+)(.+)")
-	matches := re.FindStringSubmatch(lines[0])
+	re := regexp.MustCompile("(?m)^(\\s+)Error:(\\s+)(.+)")
+	matches := re.FindStringSubmatch(strings.Join(lines, ""))
 	indent := ""
 
 	if len(matches) > 0 {
