@@ -48,14 +48,15 @@ func main() {
 
 	flag.Usage = func() {
 		w := flag.CommandLine.Output()
-		fmt.Fprintln(w, "\ngotestfmt is a tool that generates a better output format for golang tests.\n")
-		fmt.Fprintln(w, "Usage: gotestfmt [OPTIONS]\n")
+		fmt.Fprint(w, "\ngotestfmt is a tool that generates a better output format for golang tests.\n\n")
+		fmt.Fprint(w, "Usage: gotestfmt [OPTIONS]\n\n")
 		flag.PrintDefaults()
-		fmt.Fprintln(w, "\nOther commands:\n")
-		fmt.Fprintln(w, "  gotestfmt download-url\n      display the latest binary download url\n")
-		fmt.Fprintln(w, "  gotestfmt update\n      download the latest binary and replace the running one\n")
-		fmt.Fprintln(w, "  gotestfmt version\n      display the version\n")
-		fmt.Fprintln(w, "\nFor more info, visit https://github.com/fnando/gotestfmt")
+		fmt.Fprint(w, "\nOther commands:\n\n")
+		fmt.Fprint(w, "  gotestfmt download-url\n      display the latest binary download url\n\n")
+		fmt.Fprint(w, "  gotestfmt update\n      download the latest binary and replace the running one\n\n")
+		fmt.Fprint(w, "  gotestfmt version\n      display the version\n\n")
+		fmt.Fprint(w, "  gotestfmt help\n      display this help\n\n")
+		fmt.Fprintln(w, "For more info, visit https://github.com/fnando/gotestfmt")
 	}
 
 	flag.StringVar(&reporterName, "reporter", "dot", "Choose report type (dot, json)")
@@ -65,8 +66,10 @@ func main() {
 	flag.IntVar(&coverageCount, "cover-count", 10, "Number of coverage items to display")
 	flag.Parse()
 
-	if len(os.Args) >= 2 {
-		cmd := os.Args[1]
+	tailArgs := flag.Args()
+
+	if len(tailArgs) > 0 {
+		cmd := tailArgs[0]
 
 		if cmd == "download-url" {
 			fmt.Print(downloadUrl())
@@ -76,6 +79,9 @@ func main() {
 			os.Exit(0)
 		} else if cmd == "version" {
 			fmt.Println(cliVersion)
+			os.Exit(0)
+		} else if cmd == "help" {
+			flag.Usage()
 			os.Exit(0)
 		} else {
 			flag.Usage()
