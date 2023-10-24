@@ -1,5 +1,7 @@
 # gotestfmt
 
+[![Latest release](https://img.shields.io/github/v/release/fnando/gotestfmt?label=version)](https://github.com/fnando/gotestfmt/releases/latest)
+
 A better format output for golang's tests.
 
 We've all been there... a bunch of tests failing and you have no idea where to
