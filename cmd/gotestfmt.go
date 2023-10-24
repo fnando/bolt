@@ -131,7 +131,14 @@ func main() {
 		err = json.Unmarshal(line, &data)
 
 		if err != nil {
-			fmt.Print(string(line))
+			re, _ := regexp.Compile("(?m)^FAIL")
+
+			fmt.Println(string(line))
+
+			if re.Match(line) {
+				os.Exit(1)
+			}
+
 			continue
 		}
 
