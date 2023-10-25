@@ -122,6 +122,10 @@ func (dot DotReporter) Progress(test Test, writer *os.File) {
 func (dot DotReporter) Summary(report Report, writer *os.File) {
 	position := 0
 
+	if report.TestsCount == 0 {
+		return
+	}
+
 	fmt.Fprint(writer, "\n\n")
 
 	for _, test := range report.Tests {
@@ -177,8 +181,8 @@ func (dot DotReporter) Summary(report Report, writer *os.File) {
 	)
 }
 
-func (_ DotReporter) Exit(report Report) {
-	os.Exit(report.FailCount)
+func (_ DotReporter) Exit(report Report) int {
+	return report.FailCount
 }
 
 func (dot DotReporter) formatOutput(text string) string {

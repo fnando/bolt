@@ -124,16 +124,22 @@ func main() {
 
 	errorTraceRE := regexp.MustCompile("^\\s*Error Trace:\\s*(.+)")
 	coverageRE := regexp.MustCompile("^coverage: ([\\d.]+)% of statements")
+	var hasFailed bool
 
 	for scanner.Scan() {
 		data := Data{}
 		line := scanner.Bytes()
+		lineStr := string(line)
 		err = json.Unmarshal(line, &data)
+
+		hasFailed = hasFailed ||
+			strings.HasPrefix(lineStr, "FAIL\t") ||
+			strings.Contains(lineStr, "panic:")
 
 		if err != nil {
 			re, _ := regexp.Compile("(?m)^FAIL")
 
-			fmt.Println(string(line))
+			fmt.Println(lineStr, err)
 
 			if re.Match(line) {
 				os.Exit(1)
@@ -185,7 +191,15 @@ func main() {
 		}
 
 		if action == "output" && data["Test"] == nil {
-			coverageMatch := coverageRE.FindStringSubmatch(data["Output"].(string))
+			output := data["Output"].(string)
+			noise := strings.HasPrefix(output, "FAIL\t") ||
+				strings.Contains(output, "[no test files]")
+
+			if noise {
+				continue
+			}
+
+			coverageMatch := coverageRE.FindStringSubmatch(output)
 
 			if len(coverageMatch) == 2 {
 				val, _ := strconv.ParseFloat(coverageMatch[1], 32)
@@ -194,6 +208,8 @@ func main() {
 					Package:  data["Package"].(string),
 					Coverage: val,
 				})
+			} else {
+				fmt.Println(output)
 			}
 		}
 
@@ -236,7 +252,14 @@ func main() {
 
 	reporter.Summary(report, os.Stdout)
 	reporter.Coverage(filteredCoverage[:min(coverageCount, len(filteredCoverage))], os.Stdout)
-	reporter.Exit(report)
+
+	exitcode := 0
+
+	if hasFailed {
+		exitcode = 1
+	}
+
+	os.Exit(max(exitcode, reporter.Exit(report)))
 
 	if err := scanner.Err(); err != nil {
 		log.Println(err)

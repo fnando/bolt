@@ -26,6 +26,6 @@ func (_ JSONReporter) Summary(report Report, writer *os.File) {
 	fmt.Fprintln(writer, string(output))
 }
 
-func (_ JSONReporter) Exit(report Report) {
-	os.Exit(0)
+func (_ JSONReporter) Exit(report Report) int {
+	return 0
 }

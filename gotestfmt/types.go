@@ -34,7 +34,7 @@ type Reporter interface {
 	Progress(test Test, writer *os.File)
 	Summary(report Report, writer *os.File)
 	Coverage(list []Coverage, writer *os.File)
-	Exit(report Report)
+	Exit(report Report) int
 }
 
 type Coverage struct {
