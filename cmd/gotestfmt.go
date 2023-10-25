@@ -21,7 +21,7 @@ import (
 	"golang.org/x/exp/slices"
 )
 
-var cliVersion = "0.1.6"
+var cliVersion = "0.1.7"
 
 type Data map[string]any
 
