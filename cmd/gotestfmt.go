@@ -40,7 +40,6 @@ func countTestsByStatus(tests []g.Test, status string) int {
 func main() {
 	var (
 		reporterName      string
-		fastFail          bool
 		showCoverage      bool
 		coverageThreshold float64
 		coverageCount     int
@@ -60,7 +59,6 @@ func main() {
 	}
 
 	flag.StringVar(&reporterName, "reporter", "dot", "Choose report type (dot, json)")
-	flag.BoolVar(&fastFail, "fastfail", false, "Fast fail")
 	flag.BoolVar(&showCoverage, "cover", true, "Show module coverage")
 	flag.Float64Var(&coverageThreshold, "cover-threshold", 100.0, "Only show module coverage below this threshold")
 	flag.IntVar(&coverageCount, "cover-count", 10, "Number of coverage items to display")
@@ -189,10 +187,6 @@ func main() {
 
 			report.Tests = append(report.Tests, test)
 			reporter.Progress(test, os.Stdout)
-
-			if fastFail && test.Status == "fail" {
-				break
-			}
 		}
 
 		if action == "output" && data["Test"] == nil {

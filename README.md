@@ -44,8 +44,6 @@ Usage: gotestfmt [OPTIONS]
       Number of coverage items to display (default 10)
   -cover-threshold float
       Only show module coverage below this threshold (default 100)
-  -fastfail
-      Fast fail
   -reporter string
       Choose report type (dot, json) (default "dot")
 
@@ -60,6 +58,8 @@ Other commands:
   gotestfmt version
       display the version
 
+  gotestfmt help
+      display this help
 
 For more info, visit https://github.com/fnando/gotestfmt
 ```
