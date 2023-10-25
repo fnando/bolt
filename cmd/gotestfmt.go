@@ -128,13 +128,18 @@ func main() {
 
 	for scanner.Scan() {
 		data := Data{}
-		line := scanner.Bytes()
-		lineStr := string(line)
+		lineStr := string(scanner.Bytes())
+
+		base, _ := os.Getwd()
+		lineStr = strings.Replace(lineStr, base+"/", "", -1)
+		line := []byte(lineStr)
+
 		err = json.Unmarshal(line, &data)
 
 		hasFailed = hasFailed ||
 			strings.HasPrefix(lineStr, "FAIL\t") ||
-			strings.Contains(lineStr, "panic:")
+			strings.Contains(lineStr, "panic:") ||
+			strings.Contains(lineStr, "[build failed]")
 
 		if err != nil {
 			re, _ := regexp.Compile("(?m)^FAIL")
@@ -216,9 +221,7 @@ func main() {
 		if action == "output" && data["Test"] != nil {
 			key := data["Package"].(string) + ":" + data["Test"].(string)
 			test := allData[key]
-
-			base, _ := os.Getwd()
-			output := strings.Replace(data["Output"].(string), base+"/", "", -1)
+			output := data["Output"].(string)
 
 			errorTraceMatch := errorTraceRE.FindStringSubmatch(output)
 
