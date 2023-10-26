@@ -1,0 +1,15 @@
+{"Time":"2023-10-27T15:30:31.539591-07:00","Action":"start","Package":"github.com/fnando/gotestfmt/reference/bench"}
+{"Time":"2023-10-27T15:30:31.756171-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/bench","Output":"goos: darwin\n"}
+{"Time":"2023-10-27T15:30:31.756254-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/bench","Output":"goarch: arm64\n"}
+{"Time":"2023-10-27T15:30:31.756784-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/bench","Output":"pkg: github.com/fnando/gotestfmt/reference/bench\n"}
+{"Time":"2023-10-27T15:30:31.757031-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/bench","Test":"BenchmarkFib10"}
+{"Time":"2023-10-27T15:30:31.757049-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/bench","Test":"BenchmarkFib10","Output":"=== RUN   BenchmarkFib10\n"}
+{"Time":"2023-10-27T15:30:31.75706-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/bench","Test":"BenchmarkFib10","Output":"BenchmarkFib10\n"}
+{"Time":"2023-10-27T15:30:33.015341-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/bench","Test":"BenchmarkFib10","Output":"BenchmarkFib10-8   \t 5652874\t       183.9 ns/op\n"}
+{"Time":"2023-10-27T15:30:33.015389-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/bench","Test":"BenchmarkFib5"}
+{"Time":"2023-10-27T15:30:33.015394-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/bench","Test":"BenchmarkFib5","Output":"=== RUN   BenchmarkFib5\n"}
+{"Time":"2023-10-27T15:30:33.015399-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/bench","Test":"BenchmarkFib5","Output":"BenchmarkFib5\n"}
+{"Time":"2023-10-27T15:30:34.216881-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/bench","Test":"BenchmarkFib5","Output":"BenchmarkFib5-8    \t75203283\t        15.75 ns/op\n"}
+{"Time":"2023-10-27T15:30:34.216915-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/bench","Output":"PASS\n"}
+{"Time":"2023-10-27T15:30:34.217252-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/bench","Output":"ok  \tgithub.com/fnando/gotestfmt/reference/bench\t2.677s\n"}
+{"Time":"2023-10-27T15:30:34.217273-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/bench","Elapsed":2.678}

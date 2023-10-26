@@ -1,6 +1,7 @@
 # gotestfmt
 
 [![Latest release](https://img.shields.io/github/v/release/fnando/gotestfmt?label=version)](https://github.com/fnando/gotestfmt/releases/latest)
+[![Tests](https://github.com/fnando/gotestfmt/actions/workflows/tests.yml/badge.svg)](https://github.com/fnando/gotestfmt/actions/workflows/tests.yml)
 
 A better format output for golang's tests.
 
@@ -24,50 +25,66 @@ it anywhere on your path.
 
 ## Usage
 
-Pipe test results in JSON format into this tool:
+gotestfmt wraps `go test`. You can run it with:
 
 ```shell
-$ go test -json . | gotestfmt
+$ gotestfmt run ./...
 ```
 
 Options:
 
 ```shell
 $ gotestfmt -h
-gotestfmt is a tool that generates a better output format for golang tests.
 
-Usage: gotestfmt [OPTIONS]
+gotestfmt is a golang test runner that has a nicer output.
 
-  -cover
-      Show module coverage (default true)
-  -cover-count int
-      Number of coverage items to display (default 10)
-  -cover-threshold float
-      Only show module coverage below this threshold (default 100)
-  -reporter string
-      Choose report type (dot, json) (default "dot")
+  Usage: gotestfmt [command] [options]
 
-Other commands:
+  Options:
+    --version                          Show version
 
-  gotestfmt download-url
-      display the latest binary download url
 
-  gotestfmt update
-      download the latest binary and replace the running one
+  Commands:
 
-  gotestfmt version
-      display the version
+    gotestfmt version                  Show gotestfmt version
+    gotestfmt download-url             Output the latest binary download url
+    gotestfmt run                      Run tests
+    gotestfmt [command] --help         Display help on [command]
 
-  gotestfmt help
-      display this help
 
-For more info, visit https://github.com/fnando/gotestfmt
+  Further information:
+    https://github.com/fnando/gotestfmt
+
+
 ```
 
 To get the latest download url for your binary, you can use
 `gotestfmt download-url`.
 
-### Overriding colors
+### Reporters
+
+gotestfmt comes with two different reporters:
+
+### JSON
+
+The JSON reporter outputs a nicer JSON format that can be used to do things that
+require structured data.
+
+```shell
+$ gotestfmt run ./... --reporter json
+```
+
+### Progress
+
+The progress reporter outputs a sequence of characters that represent the test's
+status (fail, pass, skip). Once all tests have been executed, a summary with the
+failing and skipped tests, plus a coverage list is printed.
+
+```shell
+$ gotestfmt run ./... --reporter progress
+```
+
+#### Overriding colors
 
 You can override the colors by setting the following env vars:
 
@@ -77,18 +94,39 @@ export GOTESTFMT_FAIL_COLOR="31"
 export GOTESTFMT_PASS_COLOR="32"
 export GOTESTFMT_SKIP_COLOR="33"
 export GOTESTFMT_DETAIL_COLOR="34"
-export GOTESTFMT_COVERAGE_BAD_COLOR="31"  # coverage < 60%
-export GOTESTFMT_COVERAGE_GOOD_COLOR="32" # coverage > 70%
-export GOTESTFMT_COVERAGE_OK_COLOR="33"   # coverage between 100-70%
 ```
 
 To disable color output completely, just set `NO_COLOR=1`.
+
+#### Overriding symbols
+
+To override the characters, you can set some env vars. The following example
+shows how to use emojis instead:
+
+```shell
+export GOTESTFMT_FAIL_SYMBOL=❌
+export GOTESTFMT_PASS_SYMBOL=🔥
+export GOTESTFMT_SKIP_SYMBOL=😴
+```
 
 ## Code of Conduct
 
 Everyone interacting in the gotestfmt project’s codebases, issue trackers, chat
 rooms and mailing lists is expected to follow the
 [code of conduct](https://github.com/fnando/gotestfmt/blob/main/CODE_OF_CONDUCT.md).
+
+## Developing
+
+To generate new test replay files, you can use
+`go test -cover -json ./reference/package > test/replays/[case].txt`.
+
+To generate new benchmark replay files, you can use
+`go test -json -fullpath -bench . ./reference/bench &> test/replays/benchmark.txt`.
+
+Once files are exported, make sure you replace all paths to use `/home/test` as
+the home directory, and `/home/test/gotestfmt` as the working directory.
+
+You can run tests with `./bin/test`.
 
 ## Contributing
 

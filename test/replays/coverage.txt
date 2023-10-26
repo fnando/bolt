@@ -1,0 +1,39 @@
+{"Time":"2023-10-27T10:33:08.280021-07:00","Action":"start","Package":"github.com/fnando/gotestfmt/reference/cov/hello"}
+{"Time":"2023-10-27T10:33:08.280347-07:00","Action":"start","Package":"github.com/fnando/gotestfmt/reference/cov/bye"}
+{"Time":"2023-10-27T10:33:08.280368-07:00","Action":"start","Package":"github.com/fnando/gotestfmt/reference/cov/numbers"}
+{"Time":"2023-10-27T10:33:08.367694-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/cov/bye","Test":"TestBye"}
+{"Time":"2023-10-27T10:33:08.367766-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/bye","Test":"TestBye","Output":"=== RUN   TestBye\n"}
+{"Time":"2023-10-27T10:33:08.378699-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/bye","Test":"TestBye","Output":"--- PASS: TestBye (0.01s)\n"}
+{"Time":"2023-10-27T10:33:08.378728-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/bye","Test":"TestBye","Elapsed":0.01}
+{"Time":"2023-10-27T10:33:08.378749-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/bye","Output":"PASS\n"}
+{"Time":"2023-10-27T10:33:08.379346-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/bye","Output":"coverage: 100.0% of statements\n"}
+{"Time":"2023-10-27T10:33:08.379827-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/bye","Output":"ok  \tgithub.com/fnando/gotestfmt/reference/cov/bye\t0.099s\tcoverage: 100.0% of statements\n"}
+{"Time":"2023-10-27T10:33:08.379851-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/bye","Elapsed":0.1}
+{"Time":"2023-10-27T10:33:08.474314-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/cov/hello","Test":"TestHello"}
+{"Time":"2023-10-27T10:33:08.474376-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/hello","Test":"TestHello","Output":"=== RUN   TestHello\n"}
+{"Time":"2023-10-27T10:33:08.485332-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/hello","Test":"TestHello","Output":"--- PASS: TestHello (0.01s)\n"}
+{"Time":"2023-10-27T10:33:08.485373-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/hello","Test":"TestHello","Elapsed":0.01}
+{"Time":"2023-10-27T10:33:08.485382-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/hello","Output":"PASS\n"}
+{"Time":"2023-10-27T10:33:08.48628-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/hello","Output":"coverage: 33.3% of statements\n"}
+{"Time":"2023-10-27T10:33:08.486617-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/hello","Output":"ok  \tgithub.com/fnando/gotestfmt/reference/cov/hello\t0.206s\tcoverage: 33.3% of statements\n"}
+{"Time":"2023-10-27T10:33:08.486637-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/hello","Elapsed":0.207}
+{"Time":"2023-10-27T10:33:08.532897-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestOne"}
+{"Time":"2023-10-27T10:33:08.532923-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestOne","Output":"=== RUN   TestOne\n"}
+{"Time":"2023-10-27T10:33:08.543335-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestOne","Output":"--- PASS: TestOne (0.01s)\n"}
+{"Time":"2023-10-27T10:33:08.54335-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestOne","Elapsed":0.01}
+{"Time":"2023-10-27T10:33:08.543357-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestTwo"}
+{"Time":"2023-10-27T10:33:08.54336-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestTwo","Output":"=== RUN   TestTwo\n"}
+{"Time":"2023-10-27T10:33:08.564469-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestTwo","Output":"--- PASS: TestTwo (0.02s)\n"}
+{"Time":"2023-10-27T10:33:08.564571-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestTwo","Elapsed":0.02}
+{"Time":"2023-10-27T10:33:08.564589-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestThree"}
+{"Time":"2023-10-27T10:33:08.564599-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestThree","Output":"=== RUN   TestThree\n"}
+{"Time":"2023-10-27T10:33:08.595679-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestThree","Output":"--- PASS: TestThree (0.03s)\n"}
+{"Time":"2023-10-27T10:33:08.595741-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestThree","Elapsed":0.03}
+{"Time":"2023-10-27T10:33:08.595759-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestFour"}
+{"Time":"2023-10-27T10:33:08.595771-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestFour","Output":"=== RUN   TestFour\n"}
+{"Time":"2023-10-27T10:33:08.637084-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestFour","Output":"--- PASS: TestFour (0.04s)\n"}
+{"Time":"2023-10-27T10:33:08.637175-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestFour","Elapsed":0.04}
+{"Time":"2023-10-27T10:33:08.6372-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Output":"PASS\n"}
+{"Time":"2023-10-27T10:33:08.640628-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Output":"coverage: 80.0% of statements\n"}
+{"Time":"2023-10-27T10:33:08.642003-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Output":"ok  \tgithub.com/fnando/gotestfmt/reference/cov/numbers\t0.361s\tcoverage: 80.0% of statements\n"}
+{"Time":"2023-10-27T10:33:08.642073-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Elapsed":0.362}

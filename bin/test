@@ -1,3 +1,16 @@
 #!/usr/bin/env bash
 
-go test -json -v ./... | go run ./cmd/gotestfmt.go $@
+set -e
+
+export GOTESTFMT_HOME_DIR=/home/test
+export GOTESTFMT_WORKING_DIR=/home/test/gotestfmt
+
+if [[ ! -f .env.test ]]; then
+  echo 'GOTESTFMT_DOTENV_LOADED=1' > .env.test
+fi
+
+mkdir -p coverage
+rm -rf coverage/*.*
+go test -coverprofile=coverage/coverage.out -cover -v ./gotestfmt $@
+go run ./cmd/gotestfmt.go run ./gotestfmt
+go tool cover -html=coverage/coverage.out -o=coverage/index.html

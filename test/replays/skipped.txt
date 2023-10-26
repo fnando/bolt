@@ -1,0 +1,14 @@
+{"Time":"2023-10-26T14:52:15.207455-07:00","Action":"start","Package":"github.com/fnando/gotestfmt/reference/skip"}
+{"Time":"2023-10-26T14:52:15.443252-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithMessage"}
+{"Time":"2023-10-26T14:52:15.443328-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithMessage","Output":"=== RUN   TestSkipTestWithMessage\n"}
+{"Time":"2023-10-26T14:52:15.454429-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithMessage","Output":"    /home/test/gotestfmt/reference/skip/skip_test.go:10: Skipping this test\n"}
+{"Time":"2023-10-26T14:52:15.454618-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithMessage","Output":"--- SKIP: TestSkipTestWithMessage (0.01s)\n"}
+{"Time":"2023-10-26T14:52:15.454643-07:00","Action":"skip","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithMessage","Elapsed":0.01}
+{"Time":"2023-10-26T14:52:15.454714-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithoutMessage"}
+{"Time":"2023-10-26T14:52:15.454733-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithoutMessage","Output":"=== RUN   TestSkipTestWithoutMessage\n"}
+{"Time":"2023-10-26T14:52:15.475824-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithoutMessage","Output":"    /home/test/gotestfmt/reference/skip/skip_test.go:15: \n"}
+{"Time":"2023-10-26T14:52:15.47592-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithoutMessage","Output":"--- SKIP: TestSkipTestWithoutMessage (0.02s)\n"}
+{"Time":"2023-10-26T14:52:15.475957-07:00","Action":"skip","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithoutMessage","Elapsed":0.02}
+{"Time":"2023-10-26T14:52:15.475973-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/skip","Output":"PASS\n"}
+{"Time":"2023-10-26T14:52:15.476255-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/skip","Output":"ok  \tgithub.com/fnando/gotestfmt/reference/skip\t0.268s\n"}
+{"Time":"2023-10-26T14:52:15.476289-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/skip","Elapsed":0.269}

@@ -1,0 +1,19 @@
+FF
+
+1) Equal Number Fail
+   reference/failed/failed_test.go:16
+
+   Error:  Not equal:
+           expected: 1
+           actual  : 2
+
+2) Failed Through Helper
+   reference/failed/failed_test.go:21
+
+   Error:  Not equal:
+           expected: 1
+           actual  : 2
+
+           reference/failed/failed_test.go:11
+
+Finished in 30ms, 2 tests, 2 failures, no skips

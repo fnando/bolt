@@ -1,0 +1,47 @@
+🔥🔥🔥😴😴🔥❌❌❌🔥🔥🔥🔥
+
+1) Skip Test With Message
+   reference/skip/skip_test.go:11
+
+   Skipping this test
+
+2) Skip Test Without Message
+   reference/skip/skip_test.go:16
+
+   Skipped
+
+3) Equal Number Fail
+   reference/fail/fail_test.go:17
+
+   Error:  Not equal:
+           expected: 1
+           actual  : 2
+
+4) Equal Struct Fail
+   reference/fail/fail_test.go:27
+
+   Error:  Not equal:
+           expected: map[string]interface {}{"a":1, "b":2, "c":3}
+           actual  : map[string]interface {}{"a":1, "b":3, "c":2}
+           
+           Diff:
+           --- Expected
+           +++ Actual
+           @@ -2,4 +2,4 @@
+           (string) (len=1) "a": (int) 1,
+           - (string) (len=1) "b": (int) 2,
+           - (string) (len=1) "c": (int) 3
+           + (string) (len=1) "b": (int) 3,
+           + (string) (len=1) "c": (int) 2
+           }
+
+5) Failed Through Helper
+   reference/fail/fail_test.go:22
+
+   Error:  Not equal:
+           expected: 1
+           actual  : 2
+
+           reference/fail/fail_test.go:12
+
+Finished in 240ms, 13 tests, 3 failures, 2 skips

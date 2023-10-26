@@ -1,4 +1,5 @@
-package failed
+// +ignore
+package fail
 
 import (
 	"errors"
@@ -9,14 +10,6 @@ import (
 	g "github.com/fnando/gotestfmt/gotestfmt"
 	"github.com/stretchr/testify/assert"
 )
-
-func TestEqualStructFail(t *testing.T) {
-	assert.Equal(t, map[string]any{"a": 1, "b": 2, "c": 3}, map[string]any{"a": 1, "b": 3, "c": 2})
-}
-
-func TestEqualNumberFail(t *testing.T) {
-	assert.Equal(t, 1, 2)
-}
 
 func TestEqualStringFail(t *testing.T) {
 	assert.Equal(t, "hello", "hi")
@@ -155,4 +148,47 @@ func TestIsIncreasingFail(t *testing.T) {
 
 func TestIsTypeFail(t *testing.T) {
 	assert.IsType(t, (*int)(nil), "hello")
+}
+
+func TestRunWithNoOutput(t *testing.T) {
+	t.Run("ItFails", func(t *testing.T) {
+		assert.Equal(t, 1, 2)
+	})
+}
+
+func TestNestedRunWithNoOutput(t *testing.T) {
+	t.Run("Outer", func(t *testing.T) {
+		t.Run("Inner", func(t *testing.T) {
+			assert.Equal(t, 1, 2)
+		})
+	})
+}
+
+func TestNestedRunWithOutput(t *testing.T) {
+	t.Run("Outer", func(t *testing.T) {
+		assert.Equal(t, 2, 3)
+
+		t.Run("Inner", func(t *testing.T) {
+			assert.Equal(t, 1, 2)
+		})
+	})
+}
+
+func TestNestedRunEmptyOutput(t *testing.T) {
+	t.Run("Outer", func(t *testing.T) {
+		t.Run("Inner", func(t *testing.T) {
+		})
+	})
+}
+
+func TestNestedRunOutput(t *testing.T) {
+	fmt.Println("printing on outermost")
+
+	t.Run("Outer", func(t *testing.T) {
+		fmt.Println("printing on Outer")
+
+		t.Run("Inner", func(t *testing.T) {
+			assert.Equal(t, 1, 2)
+		})
+	})
 }

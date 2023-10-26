@@ -1,0 +1,25 @@
+{"Time":"2023-10-26T14:41:40.941557-07:00","Action":"start","Package":"github.com/fnando/gotestfmt/reference/fail"}
+{"Time":"2023-10-26T14:41:41.020318-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail"}
+{"Time":"2023-10-26T14:41:41.02037-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Output":"=== RUN   TestEqualNumberFail\n"}
+{"Time":"2023-10-26T14:41:41.031416-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Output":"    /home/test/gotestfmt/reference/failed/failed_test.go:16: \n"}
+{"Time":"2023-10-26T14:41:41.031443-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Output":"        \tError Trace:\t/home/test/gotestfmt/reference/failed/failed_test.go:16\n"}
+{"Time":"2023-10-26T14:41:41.031454-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Output":"        \tError:      \tNot equal: \n"}
+{"Time":"2023-10-26T14:41:41.031457-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Output":"        \t            \texpected: 1\n"}
+{"Time":"2023-10-26T14:41:41.031461-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Output":"        \t            \tactual  : 2\n"}
+{"Time":"2023-10-26T14:41:41.031463-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Output":"        \tTest:       \tTestEqualNumberFail\n"}
+{"Time":"2023-10-26T14:41:41.031485-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Output":"--- FAIL: TestEqualNumberFail (0.01s)\n"}
+{"Time":"2023-10-26T14:41:41.031489-07:00","Action":"fail","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Elapsed":0.01}
+{"Time":"2023-10-26T14:41:41.031731-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper"}
+{"Time":"2023-10-26T14:41:41.031737-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"=== RUN   TestFailedThroughHelper\n"}
+{"Time":"2023-10-26T14:41:41.05257-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"    /home/test/gotestfmt/reference/failed/failed_test.go:11: \n"}
+{"Time":"2023-10-26T14:41:41.052587-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"        \tError Trace:\t/home/test/gotestfmt/reference/failed/failed_test.go:11\n"}
+{"Time":"2023-10-26T14:41:41.052591-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"        \t            \t\t\t\t/home/test/gotestfmt/reference/failed/failed_test.go:21\n"}
+{"Time":"2023-10-26T14:41:41.052594-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"        \tError:      \tNot equal: \n"}
+{"Time":"2023-10-26T14:41:41.052597-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"        \t            \texpected: 1\n"}
+{"Time":"2023-10-26T14:41:41.052599-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"        \t            \tactual  : 2\n"}
+{"Time":"2023-10-26T14:41:41.052603-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"        \tTest:       \tTestFailedThroughHelper\n"}
+{"Time":"2023-10-26T14:41:41.052627-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"--- FAIL: TestFailedThroughHelper (0.02s)\n"}
+{"Time":"2023-10-26T14:41:41.052643-07:00","Action":"fail","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Elapsed":0.02}
+{"Time":"2023-10-26T14:41:41.052669-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Output":"FAIL\n"}
+{"Time":"2023-10-26T14:41:41.052952-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Output":"FAIL\tgithub.com/fnando/gotestfmt/reference/fail\t0.111s\n"}
+{"Time":"2023-10-26T14:41:41.05297-07:00","Action":"fail","Package":"github.com/fnando/gotestfmt/reference/fail","Elapsed":0.111}

@@ -1,0 +1,11 @@
+..
+
+1) Equal Number Pass
+
+   [No output]
+
+2) Equal String Pass
+
+   [No output]
+
+Finished in 30ms, 2 tests, no failures, no skips

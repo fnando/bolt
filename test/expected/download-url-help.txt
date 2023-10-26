@@ -1,0 +1,5 @@
+
+Return the latest binary url, matching  the one being executed.
+
+  Usage: gotestfmt download-url
+
