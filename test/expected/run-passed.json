@@ -1,0 +1,99 @@
+{
+  "Benchmarks": [],
+  "Coverage": [
+    {
+      "Package": "github.com/fnando/gotestfmt/reference/cov/hello",
+      "Coverage": 33.3
+    },
+    {
+      "Package": "github.com/fnando/gotestfmt/reference/cov/numbers",
+      "Coverage": 80
+    }
+  ],
+  "Tests": [
+    {
+      "Key": "github.com/fnando/gotestfmt/reference/cov/bye:TestBye",
+      "Name": "TestBye",
+      "Package": "github.com/fnando/gotestfmt/reference/cov/bye",
+      "StartedAt": "2023-10-27T10:33:08.367694-07:00",
+      "EndedAt": "2023-10-27T10:33:08.378728-07:00",
+      "Elapsed": 0.01,
+      "ReadableName": "Bye",
+      "Status": "pass",
+      "Output": [],
+      "ErrorTrace": "",
+      "TestSource": "",
+      "SkipMessage": ""
+    },
+    {
+      "Key": "github.com/fnando/gotestfmt/reference/cov/numbers:TestFour",
+      "Name": "TestFour",
+      "Package": "github.com/fnando/gotestfmt/reference/cov/numbers",
+      "StartedAt": "2023-10-27T10:33:08.595759-07:00",
+      "EndedAt": "2023-10-27T10:33:08.637175-07:00",
+      "Elapsed": 0.04,
+      "ReadableName": "Four",
+      "Status": "pass",
+      "Output": [],
+      "ErrorTrace": "",
+      "TestSource": "",
+      "SkipMessage": ""
+    },
+    {
+      "Key": "github.com/fnando/gotestfmt/reference/cov/hello:TestHello",
+      "Name": "TestHello",
+      "Package": "github.com/fnando/gotestfmt/reference/cov/hello",
+      "StartedAt": "2023-10-27T10:33:08.474314-07:00",
+      "EndedAt": "2023-10-27T10:33:08.485373-07:00",
+      "Elapsed": 0.01,
+      "ReadableName": "Hello",
+      "Status": "pass",
+      "Output": [],
+      "ErrorTrace": "",
+      "TestSource": "",
+      "SkipMessage": ""
+    },
+    {
+      "Key": "github.com/fnando/gotestfmt/reference/cov/numbers:TestOne",
+      "Name": "TestOne",
+      "Package": "github.com/fnando/gotestfmt/reference/cov/numbers",
+      "StartedAt": "2023-10-27T10:33:08.532897-07:00",
+      "EndedAt": "2023-10-27T10:33:08.54335-07:00",
+      "Elapsed": 0.01,
+      "ReadableName": "One",
+      "Status": "pass",
+      "Output": [],
+      "ErrorTrace": "",
+      "TestSource": "",
+      "SkipMessage": ""
+    },
+    {
+      "Key": "github.com/fnando/gotestfmt/reference/cov/numbers:TestThree",
+      "Name": "TestThree",
+      "Package": "github.com/fnando/gotestfmt/reference/cov/numbers",
+      "StartedAt": "2023-10-27T10:33:08.564589-07:00",
+      "EndedAt": "2023-10-27T10:33:08.595741-07:00",
+      "Elapsed": 0.03,
+      "ReadableName": "Three",
+      "Status": "pass",
+      "Output": [],
+      "ErrorTrace": "",
+      "TestSource": "",
+      "SkipMessage": ""
+    },
+    {
+      "Key": "github.com/fnando/gotestfmt/reference/cov/numbers:TestTwo",
+      "Name": "TestTwo",
+      "Package": "github.com/fnando/gotestfmt/reference/cov/numbers",
+      "StartedAt": "2023-10-27T10:33:08.543357-07:00",
+      "EndedAt": "2023-10-27T10:33:08.564571-07:00",
+      "Elapsed": 0.02,
+      "ReadableName": "Two",
+      "Status": "pass",
+      "Output": [],
+      "ErrorTrace": "",
+      "TestSource": "",
+      "SkipMessage": ""
+    }
+  ]
+}

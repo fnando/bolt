@@ -5,11 +5,12 @@ set -e
 build() {
   os=$1
   arch=$2
+  arch_file=./gotestfmt/arch.go
 
   git checkout ./gotestfmt/arch.go &> /dev/null || true
-  printf "package gotestfmt\nvar Arch = \"$os-$arch\"\n" > ./gotestfmt/arch.go
+  printf "package gotestfmt\nvar Arch = \"$os-$arch\"\n" > $arch_file
   env GOOS=$os GOARCH=$arch go build -o build/gotestfmt-$os-$arch cmd/gotestfmt.go
-  git checkout ./gotestfmt/arch.go &> /dev/null || true
+  git checkout $arch_file &> /dev/null || true
 }
 
 rm -rf build
@@ -19,3 +20,5 @@ build linux amd64
 build linux arm64
 build darwin arm64
 build darwin amd64
+build windows 386
+build windows amd64

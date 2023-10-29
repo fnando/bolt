@@ -1,0 +1,108 @@
+{"Time":"2023-10-27T11:46:35.434104-07:00","Action":"start","Package":"github.com/fnando/gotestfmt/reference/cov/bye"}
+{"Time":"2023-10-27T11:46:35.434226-07:00","Action":"start","Package":"github.com/fnando/gotestfmt/reference/cov/hello"}
+{"Time":"2023-10-27T11:46:35.434291-07:00","Action":"start","Package":"github.com/fnando/gotestfmt/reference/cov/numbers"}
+{"Time":"2023-10-27T11:46:35.434301-07:00","Action":"start","Package":"github.com/fnando/gotestfmt/reference/fail"}
+{"Time":"2023-10-27T11:46:35.434311-07:00","Action":"start","Package":"github.com/fnando/gotestfmt/reference/pass"}
+{"Time":"2023-10-27T11:46:35.434319-07:00","Action":"start","Package":"github.com/fnando/gotestfmt/reference/skip"}
+{"Time":"2023-10-27T11:46:35.643689-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/cov/hello","Test":"TestHello"}
+{"Time":"2023-10-27T11:46:35.643767-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/hello","Test":"TestHello","Output":"=== RUN   TestHello\n"}
+{"Time":"2023-10-27T11:46:35.654689-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/hello","Test":"TestHello","Output":"--- PASS: TestHello (0.01s)\n"}
+{"Time":"2023-10-27T11:46:35.6547-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/hello","Test":"TestHello","Elapsed":0.01}
+{"Time":"2023-10-27T11:46:35.654955-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/hello","Output":"PASS\n"}
+{"Time":"2023-10-27T11:46:35.655063-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/hello","Output":"ok  \tgithub.com/fnando/gotestfmt/reference/cov/hello\t0.221s\n"}
+{"Time":"2023-10-27T11:46:35.655083-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/hello","Elapsed":0.221}
+{"Time":"2023-10-27T11:46:35.777027-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/pass","Test":"TestEqualStringPass"}
+{"Time":"2023-10-27T11:46:35.777051-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/pass","Test":"TestEqualStringPass","Output":"=== RUN   TestEqualStringPass\n"}
+{"Time":"2023-10-27T11:46:35.788137-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/pass","Test":"TestEqualStringPass","Output":"--- PASS: TestEqualStringPass (0.01s)\n"}
+{"Time":"2023-10-27T11:46:35.78815-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/pass","Test":"TestEqualStringPass","Elapsed":0.01}
+{"Time":"2023-10-27T11:46:35.788156-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/pass","Test":"TestEqualNumberPass"}
+{"Time":"2023-10-27T11:46:35.788159-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/pass","Test":"TestEqualNumberPass","Output":"=== RUN   TestEqualNumberPass\n"}
+{"Time":"2023-10-27T11:46:35.809284-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/pass","Test":"TestEqualNumberPass","Output":"--- PASS: TestEqualNumberPass (0.02s)\n"}
+{"Time":"2023-10-27T11:46:35.80932-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/pass","Test":"TestEqualNumberPass","Elapsed":0.02}
+{"Time":"2023-10-27T11:46:35.809337-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/pass","Output":"PASS\n"}
+{"Time":"2023-10-27T11:46:35.810347-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/pass","Output":"ok  \tgithub.com/fnando/gotestfmt/reference/pass\t0.376s\n"}
+{"Time":"2023-10-27T11:46:35.810588-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/pass","Elapsed":0.376}
+{"Time":"2023-10-27T11:46:35.885767-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithMessage"}
+{"Time":"2023-10-27T11:46:35.885791-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithMessage","Output":"=== RUN   TestSkipTestWithMessage\n"}
+{"Time":"2023-10-27T11:46:35.89693-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithMessage","Output":"    /home/test/gotestfmt/reference/skip/skip_test.go:11: Skipping this test\n"}
+{"Time":"2023-10-27T11:46:35.897043-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithMessage","Output":"--- SKIP: TestSkipTestWithMessage (0.01s)\n"}
+{"Time":"2023-10-27T11:46:35.897057-07:00","Action":"skip","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithMessage","Elapsed":0.01}
+{"Time":"2023-10-27T11:46:35.897075-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithoutMessage"}
+{"Time":"2023-10-27T11:46:35.897085-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithoutMessage","Output":"=== RUN   TestSkipTestWithoutMessage\n"}
+{"Time":"2023-10-27T11:46:35.917249-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithoutMessage","Output":"    /home/test/gotestfmt/reference/skip/skip_test.go:16: \n"}
+{"Time":"2023-10-27T11:46:35.917327-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithoutMessage","Output":"--- SKIP: TestSkipTestWithoutMessage (0.02s)\n"}
+{"Time":"2023-10-27T11:46:35.917374-07:00","Action":"skip","Package":"github.com/fnando/gotestfmt/reference/skip","Test":"TestSkipTestWithoutMessage","Elapsed":0.02}
+{"Time":"2023-10-27T11:46:35.917403-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/skip","Output":"PASS\n"}
+{"Time":"2023-10-27T11:46:35.918128-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/skip","Output":"ok  \tgithub.com/fnando/gotestfmt/reference/skip\t0.484s\n"}
+{"Time":"2023-10-27T11:46:35.918204-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/skip","Elapsed":0.484}
+{"Time":"2023-10-27T11:46:36.001131-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/cov/bye","Test":"TestBye"}
+{"Time":"2023-10-27T11:46:36.001193-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/bye","Test":"TestBye","Output":"=== RUN   TestBye\n"}
+{"Time":"2023-10-27T11:46:36.011872-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/bye","Test":"TestBye","Output":"--- PASS: TestBye (0.01s)\n"}
+{"Time":"2023-10-27T11:46:36.011953-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/bye","Test":"TestBye","Elapsed":0.01}
+{"Time":"2023-10-27T11:46:36.011997-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/bye","Output":"PASS\n"}
+{"Time":"2023-10-27T11:46:36.012743-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/bye","Output":"ok  \tgithub.com/fnando/gotestfmt/reference/cov/bye\t0.578s\n"}
+{"Time":"2023-10-27T11:46:36.012769-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/bye","Elapsed":0.579}
+{"Time":"2023-10-27T11:46:36.112423-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail"}
+{"Time":"2023-10-27T11:46:36.112544-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Output":"=== RUN   TestEqualNumberFail\n"}
+{"Time":"2023-10-27T11:46:36.123853-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Output":"    /home/test/gotestfmt/reference/fail/fail_test.go:17: \n"}
+{"Time":"2023-10-27T11:46:36.123929-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Output":"        \tError Trace:\t/home/test/gotestfmt/reference/fail/fail_test.go:17\n"}
+{"Time":"2023-10-27T11:46:36.123941-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Output":"        \tError:      \tNot equal: \n"}
+{"Time":"2023-10-27T11:46:36.123959-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Output":"        \t            \texpected: 1\n"}
+{"Time":"2023-10-27T11:46:36.124012-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Output":"        \t            \tactual  : 2\n"}
+{"Time":"2023-10-27T11:46:36.124031-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Output":"        \tTest:       \tTestEqualNumberFail\n"}
+{"Time":"2023-10-27T11:46:36.124057-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Output":"--- FAIL: TestEqualNumberFail (0.01s)\n"}
+{"Time":"2023-10-27T11:46:36.124069-07:00","Action":"fail","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualNumberFail","Elapsed":0.01}
+{"Time":"2023-10-27T11:46:36.124082-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper"}
+{"Time":"2023-10-27T11:46:36.124091-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"=== RUN   TestFailedThroughHelper\n"}
+{"Time":"2023-10-27T11:46:36.145027-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"    /home/test/gotestfmt/reference/fail/fail_test.go:12: \n"}
+{"Time":"2023-10-27T11:46:36.145081-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"        \tError Trace:\t/home/test/gotestfmt/reference/fail/fail_test.go:12\n"}
+{"Time":"2023-10-27T11:46:36.145157-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"        \t            \t\t\t\t/home/test/gotestfmt/reference/fail/fail_test.go:22\n"}
+{"Time":"2023-10-27T11:46:36.145167-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"        \tError:      \tNot equal: \n"}
+{"Time":"2023-10-27T11:46:36.145176-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"        \t            \texpected: 1\n"}
+{"Time":"2023-10-27T11:46:36.145185-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"        \t            \tactual  : 2\n"}
+{"Time":"2023-10-27T11:46:36.145193-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"        \tTest:       \tTestFailedThroughHelper\n"}
+{"Time":"2023-10-27T11:46:36.145228-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Output":"--- FAIL: TestFailedThroughHelper (0.02s)\n"}
+{"Time":"2023-10-27T11:46:36.145241-07:00","Action":"fail","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestFailedThroughHelper","Elapsed":0.02}
+{"Time":"2023-10-27T11:46:36.145254-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail"}
+{"Time":"2023-10-27T11:46:36.145262-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"=== RUN   TestEqualStructFail\n"}
+{"Time":"2023-10-27T11:46:36.176433-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"    /home/test/gotestfmt/reference/fail/fail_test.go:27: \n"}
+{"Time":"2023-10-27T11:46:36.176481-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"        \tError Trace:\t/home/test/gotestfmt/reference/fail/fail_test.go:27\n"}
+{"Time":"2023-10-27T11:46:36.176491-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"        \tError:      \tNot equal: \n"}
+{"Time":"2023-10-27T11:46:36.176523-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \texpected: map[string]interface {}{\"a\":1, \"b\":2, \"c\":3}\n"}
+{"Time":"2023-10-27T11:46:36.176533-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \tactual  : map[string]interface {}{\"a\":1, \"b\":3, \"c\":2}\n"}
+{"Time":"2023-10-27T11:46:36.176543-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t\n"}
+{"Time":"2023-10-27T11:46:36.176551-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \tDiff:\n"}
+{"Time":"2023-10-27T11:46:36.176559-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t--- Expected\n"}
+{"Time":"2023-10-27T11:46:36.176567-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t+++ Actual\n"}
+{"Time":"2023-10-27T11:46:36.176575-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t@@ -2,4 +2,4 @@\n"}
+{"Time":"2023-10-27T11:46:36.176583-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t  (string) (len=1) \"a\": (int) 1,\n"}
+{"Time":"2023-10-27T11:46:36.176592-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t- (string) (len=1) \"b\": (int) 2,\n"}
+{"Time":"2023-10-27T11:46:36.176599-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t- (string) (len=1) \"c\": (int) 3\n"}
+{"Time":"2023-10-27T11:46:36.176607-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t+ (string) (len=1) \"b\": (int) 3,\n"}
+{"Time":"2023-10-27T11:46:36.176615-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t+ (string) (len=1) \"c\": (int) 2\n"}
+{"Time":"2023-10-27T11:46:36.176623-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t }\n"}
+{"Time":"2023-10-27T11:46:36.176631-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"        \tTest:       \tTestEqualStructFail\n"}
+{"Time":"2023-10-27T11:46:36.176646-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Output":"--- FAIL: TestEqualStructFail (0.03s)\n"}
+{"Time":"2023-10-27T11:46:36.176657-07:00","Action":"fail","Package":"github.com/fnando/gotestfmt/reference/fail","Test":"TestEqualStructFail","Elapsed":0.03}
+{"Time":"2023-10-27T11:46:36.176689-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Output":"FAIL\n"}
+{"Time":"2023-10-27T11:46:36.177172-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/fail","Output":"FAIL\tgithub.com/fnando/gotestfmt/reference/fail\t0.743s\n"}
+{"Time":"2023-10-27T11:46:36.177199-07:00","Action":"fail","Package":"github.com/fnando/gotestfmt/reference/fail","Elapsed":0.743}
+{"Time":"2023-10-27T11:46:36.224208-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestOne"}
+{"Time":"2023-10-27T11:46:36.224268-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestOne","Output":"=== RUN   TestOne\n"}
+{"Time":"2023-10-27T11:46:36.23446-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestOne","Output":"--- PASS: TestOne (0.01s)\n"}
+{"Time":"2023-10-27T11:46:36.234505-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestOne","Elapsed":0.01}
+{"Time":"2023-10-27T11:46:36.234521-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestTwo"}
+{"Time":"2023-10-27T11:46:36.234529-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestTwo","Output":"=== RUN   TestTwo\n"}
+{"Time":"2023-10-27T11:46:36.255628-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestTwo","Output":"--- PASS: TestTwo (0.02s)\n"}
+{"Time":"2023-10-27T11:46:36.255678-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestTwo","Elapsed":0.02}
+{"Time":"2023-10-27T11:46:36.255692-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestThree"}
+{"Time":"2023-10-27T11:46:36.255703-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestThree","Output":"=== RUN   TestThree\n"}
+{"Time":"2023-10-27T11:46:36.286773-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestThree","Output":"--- PASS: TestThree (0.03s)\n"}
+{"Time":"2023-10-27T11:46:36.286823-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestThree","Elapsed":0.03}
+{"Time":"2023-10-27T11:46:36.286837-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestFour"}
+{"Time":"2023-10-27T11:46:36.286845-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestFour","Output":"=== RUN   TestFour\n"}
+{"Time":"2023-10-27T11:46:36.328017-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestFour","Output":"--- PASS: TestFour (0.04s)\n"}
+{"Time":"2023-10-27T11:46:36.328092-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Test":"TestFour","Elapsed":0.04}
+{"Time":"2023-10-27T11:46:36.328118-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Output":"PASS\n"}
+{"Time":"2023-10-27T11:46:36.329444-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Output":"ok  \tgithub.com/fnando/gotestfmt/reference/cov/numbers\t0.895s\n"}
+{"Time":"2023-10-27T11:46:36.32951-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/cov/numbers","Elapsed":0.895}

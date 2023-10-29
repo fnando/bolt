@@ -1,0 +1,75 @@
+
+Run tests by wrapping "go tests".
+
+  Usage: gotestfmt run [options] [packages...] -- [additional "go test" arguments]
+
+  Options:
+    --all                              Show all tests output, including passed ones (default to false)
+    --coverage-count=COUNT             The number of coverage items to display (default to 10)
+    --coverage-threshold=THRESHOLD     The coverage threshold (default to 100)
+    --dotenv=DOTENV                    Load an env var file before running tests. To disable it, set it to false (default to .env.test)
+    --no-color                         Disable colored output. When unset, respects the NO_COLOR=1 env var (default to false)
+    --replay-file=FILE                 Use a replay file instead of running tests
+    --reporter=REPORTER                Set the reporter type (default to progress)
+
+
+  Available reporters:
+    progress
+      Print a character for each test, with a test summary and list of
+      failed/skipped tests.
+
+    json
+      Print a JSON representation of the gotestfmt state.
+
+
+  How it works:
+    This is what gotestfmt runs if you execute "gotestfmt run ./...":
+
+    $ go test -cover -json -fullpath ./...
+
+    You can pass additional arguments to the "go test" command like this:
+
+    $ gotestfmt run ./... -- -run TestExample
+
+    These arguments will be appended to the default arguments used by gotestfmt.
+    The example above would be execute like this:
+
+    $ go test -cover -json -fullpath -run TestExample ./...
+
+    To execute a raw "go test" command, use the switch --raw. This will avoid
+    default arguments from being added to the final execution. In practice, it
+    means you'll need to run the whole command:
+
+    $ gotestfmt run --raw -- ./some_module -run TestExample
+
+
+  Replaying files:
+    To replay a file, you need to save the output by running something like
+    "go test -json -fullpath &> replay.txt". Then you can replay it using
+    "gotestfmt run -replay-file replay.txt".
+
+
+  Color:
+    gotestfmt will output colored text based on ANSI colors. By default, the
+    following env vars will be used and you can override any of them to set
+    a custom color:
+
+    export GOTESTFMT_TEXT_COLOR="30"
+    export GOTESTFMT_FAIL_COLOR="31"
+    export GOTESTFMT_PASS_COLOR="32"
+    export GOTESTFMT_SKIP_COLOR="33"
+    export GOTESTFMT_DETAIL_COLOR="34"
+
+    To disable colored output you can use "--no-color" or
+    set the env var NO_COLOR=1.
+
+
+  Progress reporter:
+    You can override the default progress symbols by setting env vars. The
+    following example shows how to use emojis instead:
+
+    export GOTESTFMT_FAIL_SYMBOL=❌
+    export GOTESTFMT_PASS_SYMBOL=🔥
+    export GOTESTFMT_SKIP_SYMBOL=😴
+
+

@@ -1,0 +1,13 @@
+SS
+
+1) Skip Test With Message
+   reference/skip/skip_test.go:10
+
+   Skipping this test
+
+2) Skip Test Without Message
+   reference/skip/skip_test.go:15
+
+   Skipped
+
+Finished in 30ms, 2 tests, no failures, 2 skips

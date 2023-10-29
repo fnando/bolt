@@ -1,0 +1,20 @@
+
+gotestfmt is a golang test runner that has a nicer output.
+
+  Usage: gotestfmt [command] [options]
+
+  Options:
+    --version                          Show version
+
+
+  Commands:
+
+    gotestfmt version                  Show gotestfmt version
+    gotestfmt download-url             Output the latest binary download url
+    gotestfmt run                      Run tests
+    gotestfmt [command] --help         Display help on [command]
+
+
+  Further information:
+    https://github.com/fnando/gotestfmt
+

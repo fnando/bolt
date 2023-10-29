@@ -1,0 +1,12 @@
+{"Time":"2023-10-26T18:26:18.663153-07:00","Action":"start","Package":"github.com/fnando/gotestfmt/reference/pass"}
+{"Time":"2023-10-26T18:26:18.78936-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/pass","Test":"TestEqualStringPass"}
+{"Time":"2023-10-26T18:26:18.789426-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/pass","Test":"TestEqualStringPass","Output":"=== RUN   TestEqualStringPass\n"}
+{"Time":"2023-10-26T18:26:18.800401-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/pass","Test":"TestEqualStringPass","Output":"--- PASS: TestEqualStringPass (0.01s)\n"}
+{"Time":"2023-10-26T18:26:18.800417-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/pass","Test":"TestEqualStringPass","Elapsed":0.01}
+{"Time":"2023-10-26T18:26:18.80044-07:00","Action":"run","Package":"github.com/fnando/gotestfmt/reference/pass","Test":"TestEqualNumberPass"}
+{"Time":"2023-10-26T18:26:18.800443-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/pass","Test":"TestEqualNumberPass","Output":"=== RUN   TestEqualNumberPass\n"}
+{"Time":"2023-10-26T18:26:18.821515-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/pass","Test":"TestEqualNumberPass","Output":"--- PASS: TestEqualNumberPass (0.02s)\n"}
+{"Time":"2023-10-26T18:26:18.821552-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/pass","Test":"TestEqualNumberPass","Elapsed":0.02}
+{"Time":"2023-10-26T18:26:18.821565-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/pass","Output":"PASS\n"}
+{"Time":"2023-10-26T18:26:18.822054-07:00","Action":"output","Package":"github.com/fnando/gotestfmt/reference/pass","Output":"ok  \tgithub.com/fnando/gotestfmt/reference/pass\t0.158s\n"}
+{"Time":"2023-10-26T18:26:18.82208-07:00","Action":"pass","Package":"github.com/fnando/gotestfmt/reference/pass","Elapsed":0.159}

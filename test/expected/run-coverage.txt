@@ -1,0 +1,8 @@
+......
+
+Finished in 120ms, 6 tests, no failures, no skips
+
+Coverage:
+
+[33.3%] github.com/fnando/gotestfmt/reference/cov/hello
+[80.0%] github.com/fnando/gotestfmt/reference/cov/numbers
