@@ -1,0 +1,21 @@
+=== RUN   TestBye
+--- PASS: TestBye (0.01s)
+PASS
+coverage: 100.0% of statements
+ok  	github.com/fnando/gotestfmt/reference/cov/bye	0.623s	coverage: 100.0% of statements
+=== RUN   TestHello
+--- PASS: TestHello (0.01s)
+PASS
+coverage: 33.3% of statements
+ok  	github.com/fnando/gotestfmt/reference/cov/hello	0.133s	coverage: 33.3% of statements
+=== RUN   TestOne
+--- PASS: TestOne (0.01s)
+=== RUN   TestTwo
+--- PASS: TestTwo (0.02s)
+=== RUN   TestThree
+--- PASS: TestThree (0.03s)
+=== RUN   TestFour
+--- PASS: TestFour (0.04s)
+PASS
+coverage: 80.0% of statements
+ok  	github.com/fnando/gotestfmt/reference/cov/numbers	0.451s	coverage: 80.0% of statements

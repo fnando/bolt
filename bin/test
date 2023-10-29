@@ -12,5 +12,5 @@ fi
 mkdir -p coverage
 rm -rf coverage/*.*
 go test -coverprofile=coverage/coverage.out -cover -v ./gotestfmt $@
-go run ./cmd/gotestfmt.go run ./gotestfmt
+go run ./cmd/gotestfmt.go run --env=false ./gotestfmt
 go tool cover -html=coverage/coverage.out -o=coverage/index.html

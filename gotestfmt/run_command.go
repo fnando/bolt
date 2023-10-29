@@ -27,6 +27,7 @@ type RunCommandArgs struct {
 	WorkingDir        string
 	Output            *OutputBuffers
 	Binary            string
+	Raw               bool
 }
 
 func RunCommand(args CommandArgs) (exitcode int) {
@@ -45,35 +46,14 @@ func RunCommand(args CommandArgs) (exitcode int) {
 	flags.SetOutput(buffer)
 	flags.StringVar(&cmdArgs.Reporter, "reporter", "progress", "Set the reporter type")
 	flags.StringVar(&cmdArgs.ReplayFile, "replay-file", "", "Use a replay file instead of running tests")
-	flags.StringVar(&cmdArgs.Dotenv, "dotenv", ".env.test", "Load an env var file before running tests. To disable it, set it to false")
+	flags.StringVar(&cmdArgs.Dotenv, "env", ".env.test", "Load an env var file before running tests. To disable it, set it to false")
 	flags.IntVar(&cmdArgs.CoverageCount, "coverage-count", 10, "The number of coverage items to display")
 	flags.Float64Var(&cmdArgs.CoverageThreshold, "coverage-threshold", 100, "The coverage threshold")
 	flags.BoolVar(&cmdArgs.NoColor, "no-color", false, "Disable colored output. When unset, respects the NO_COLOR=1 env var")
 	flags.BoolVar(&cmdArgs.ShowAll, "all", false, "Show all tests output, including passed ones")
+	flags.BoolVar(&cmdArgs.Raw, "raw", false, "Bypass gotestfmt entirely")
 	err := flags.Parse(args.Args)
 	cmdArgs.Args = flags.Args()
-
-	var reporter Reporter
-
-	if cmdArgs.Reporter == "progress" {
-		reporter = ProgressReporter{
-			Env:    args.Env,
-			Output: args.Output,
-			ColorByStatus: map[string]string{
-				"fail": Color.FailColor,
-				"skip": Color.SkipColor,
-				"pass": Color.PassColor,
-			},
-		}
-	} else if cmdArgs.Reporter == "json" {
-		reporter = JSONReporter{
-			Output: args.Output,
-		}
-	} else {
-		err = errors.New(Color.Fail("Invalid reporter"))
-	}
-
-	Color.Disabled = Color.Disabled || cmdArgs.NoColor
 
 	usage := fmt.Sprintf(`
 Run tests by wrapping "go tests".
@@ -154,6 +134,43 @@ Run tests by wrapping "go tests".
 		return 1
 	}
 
+	if cmdArgs.Dotenv != "false" {
+		cmdArgs.Env, err = loadDotenvFile(cmdArgs.Env, cmdArgs.Dotenv)
+
+		if err != nil && cmdArgs.Dotenv != ".env.test" {
+			fmt.Fprintf(cmdArgs.Output.StderrWriter, "%s %s\n", Color.Fail("ERROR:"), err)
+			return 1
+		}
+	}
+
+	Color.TextColor = lookupEnvOrDefault(cmdArgs.Env, "GOTESTFMT_TEXT_COLOR", "30")
+	Color.FailColor = lookupEnvOrDefault(cmdArgs.Env, "GOTESTFMT_FAIL_COLOR", "31")
+	Color.PassColor = lookupEnvOrDefault(cmdArgs.Env, "GOTESTFMT_PASS_COLOR", "32")
+	Color.SkipColor = lookupEnvOrDefault(cmdArgs.Env, "GOTESTFMT_SKIP_COLOR", "33")
+	Color.DetailColor = lookupEnvOrDefault(cmdArgs.Env, "GOTESTFMT_DETAIL_COLOR", "34")
+	Color.Disabled = lookupEnvOrDefault(cmdArgs.Env, "NO_COLOR", "") == "1"
+	Color.Disabled = Color.Disabled || cmdArgs.NoColor
+
+	var reporter Reporter
+
+	if cmdArgs.Reporter == "progress" {
+		reporter = ProgressReporter{
+			Env:    args.Env,
+			Output: args.Output,
+			ColorByStatus: map[string]string{
+				"fail": Color.FailColor,
+				"skip": Color.SkipColor,
+				"pass": Color.PassColor,
+			},
+		}
+	} else if cmdArgs.Reporter == "json" {
+		reporter = JSONReporter{
+			Output: args.Output,
+		}
+	} else {
+		err = errors.New(Color.Fail("Invalid reporter"))
+	}
+
 	if cmdArgs.ReplayFile != "" {
 		return ReplayFile(&cmdArgs, reporter)
 	}
@@ -186,6 +203,11 @@ func Exec(args *RunCommandArgs, reporter Reporter) int {
 	}
 
 	cmdArgs := append([]string{"test", "-cover", "-json", "-fullpath"}, packages...)
+
+	if args.Raw {
+		cmdArgs = append([]string{"test"}, args.Args...)
+	}
+
 	cmdArgs = append(cmdArgs, extra...)
 	cmd := exec.Command("go", cmdArgs...)
 
@@ -201,7 +223,15 @@ func Exec(args *RunCommandArgs, reporter Reporter) int {
 		WorkingDir: args.WorkingDir,
 		Scanner:    scanner,
 		Output:     args.Output,
+		Raw:        args.Raw,
 	})
+
+	consumer.onLineRead = func(line string) {
+		if args.Raw {
+			fmt.Fprintln(args.Output.StdoutWriter, line)
+		}
+	}
+
 	consumer.OnNotifyTestFinish = func(test *Test) {
 		reporter.Progress(test)
 	}
@@ -227,9 +257,13 @@ func Exec(args *RunCommandArgs, reporter Reporter) int {
 
 	cmd.Start()
 	consumer.Run()
+	err = cmd.Wait()
 
-	if err != nil {
-		panic(err)
+	if exiterr, ok := err.(*exec.ExitError); ok {
+		exitcode = exiterr.ExitCode()
+	} else if err != nil {
+		fmt.Fprintf(args.Output.StderrWriter, "%s %s\n", Color.Fail("ERROR:"), err)
+		exitcode = 1
 	}
 
 	return exitcode
@@ -265,6 +299,7 @@ func ReplayFile(args *RunCommandArgs, reporter Reporter) int {
 		WorkingDir: args.WorkingDir,
 		Scanner:    scanner,
 		Output:     args.Output,
+		Raw:        args.Raw,
 	})
 
 	consumer.OnNotifyTestFinish = func(test *Test) {

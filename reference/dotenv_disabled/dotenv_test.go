@@ -8,5 +8,7 @@ import (
 )
 
 func TestDefaultDotenvFile(t *testing.T) {
-	assert.Equal(t, "", os.Getenv("GOTESTFMT_DOTENV_LOADED"))
+	value, exists := os.LookupEnv("GOTESTFMT_DOTENV_LOADED")
+	assert.False(t, exists)
+	assert.Equal(t, "", value)
 }

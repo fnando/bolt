@@ -7,8 +7,9 @@ Run tests by wrapping "go tests".
     --all                              Show all tests output, including passed ones (default to false)
     --coverage-count=COUNT             The number of coverage items to display (default to 10)
     --coverage-threshold=THRESHOLD     The coverage threshold (default to 100)
-    --dotenv=DOTENV                    Load an env var file before running tests. To disable it, set it to false (default to .env.test)
+    --env=ENV                          Load an env var file before running tests. To disable it, set it to false (default to .env.test)
     --no-color                         Disable colored output. When unset, respects the NO_COLOR=1 env var (default to false)
+    --raw                              Bypass gotestfmt entirely (default to false)
     --replay-file=FILE                 Use a replay file instead of running tests
     --reporter=REPORTER                Set the reporter type (default to progress)
 

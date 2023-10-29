@@ -118,21 +118,34 @@ func TestRunPassedReplayFileWithJSONReporter(t *testing.T) {
 
 func TestRunLoadDefaultDotenvFile(t *testing.T) {
 	output := createBuffers()
-	exitcode := Run([]string{"run", "--reporter", "json", "--no-color", "./reference/dotenv_default"}, env, output)
+	exitcode := Run([]string{"run", "--no-color", "./reference/dotenv_default"}, env, output)
 
 	assert.Equal(t, 0, exitcode)
 }
 
 func TestRunCustomDotenvFile(t *testing.T) {
 	output := createBuffers()
-	exitcode := Run([]string{"run", "--reporter", "json", "--no-color", "--dotenv", "test/dotenv", "./reference/dotenv_custom"}, env, output)
+	exitcode := Run([]string{"run", "--no-color", "--env", "test/dotenv", "./reference/dotenv_custom"}, env, output)
 
 	assert.Equal(t, 0, exitcode)
 }
 
 func TestRunDisableDefaultDotenvFile(t *testing.T) {
 	output := createBuffers()
-	exitcode := Run([]string{"run", "--reporter", "json", "--no-color", "--dotenv", "false", "./reference/dotenv_disabled"}, env, output)
+	exitcode := Run([]string{"run", "--no-color", "--env", "false", "./reference/dotenv_disabled"}, env, output)
 
+	assert.Equal(t, 0, exitcode)
+}
+
+func TestRunWithRawPassingTests(t *testing.T) {
+	output := createBuffers()
+	exitcode := Run([]string{"run", "--raw", "--no-color", "--", "-count=1", "-cover", "-v", "./reference/cov/..."}, env, output)
+
+	stdout := output.Stdout.String()
+
+	assert.Contains(t, stdout, "=== RUN   TestBye\n")
+	assert.Contains(t, stdout, "--- PASS: TestBye ")
+	assert.Contains(t, stdout, "coverage: 100.0% of statements\n")
+	assert.Contains(t, stdout, "ok  	github.com/fnando/gotestfmt/reference/cov/bye")
 	assert.Equal(t, 0, exitcode)
 }

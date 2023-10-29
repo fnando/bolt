@@ -66,36 +66,14 @@ func getOptionsDescription(flags *flag.FlagSet) (out string) {
 }
 
 func Run(args []string, env []string, output OutputBuffers) (exitcode int) {
-	var subcommandArgs []string
-	var dotenv string
 	var err error
+	commands := []string{"update", "version", "run", "download-url"}
 
-	flags := flag.NewFlagSet("", flag.ContinueOnError)
-	flags.Usage = func() {}
-	flags.StringVar(&dotenv, "dotenv", ".env.test", "")
-	flags.Parse(append([]string{}, args...))
-	cmd := flags.Arg(0)
-
-	if cmd != "" {
-		subcommandArgs = args[1:]
-	} else {
-		subcommandArgs = args
+	cmd := ""
+	if len(args) > 0 && slices.Contains(commands, args[0]) {
+		cmd = args[0]
+		args = args[1:]
 	}
-
-	if dotenv != "false" {
-		env, err = loadDotenvFile(env, dotenv)
-
-		if err != nil {
-			fmt.Fprintf(output.StderrWriter, "%s %s", Color.Fail("ERROR:"), err)
-		}
-	}
-
-	Color.TextColor = lookupEnvOrDefault(env, "GOTESTFMT_TEXT_COLOR", "30")
-	Color.FailColor = lookupEnvOrDefault(env, "GOTESTFMT_FAIL_COLOR", "31")
-	Color.PassColor = lookupEnvOrDefault(env, "GOTESTFMT_PASS_COLOR", "32")
-	Color.SkipColor = lookupEnvOrDefault(env, "GOTESTFMT_SKIP_COLOR", "33")
-	Color.DetailColor = lookupEnvOrDefault(env, "GOTESTFMT_DETAIL_COLOR", "34")
-	Color.Disabled = lookupEnvOrDefault(env, "NO_COLOR", "") == "1"
 
 	bin, err := os.Executable()
 	binary := lookupEnvOrDefault(env, "GOTESTFMT_BINARY", bin)
@@ -127,7 +105,7 @@ func Run(args []string, env []string, output OutputBuffers) (exitcode int) {
 		Binary:     binary,
 		Env:        env,
 		Output:     &output,
-		Args:       subcommandArgs,
+		Args:       args,
 	}
 
 	switch cmd {

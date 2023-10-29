@@ -27,7 +27,9 @@ type StreamConsumer struct {
 	OnNotifyTestFinish func(test *Test)
 	OnFinish           func(test []*Test, coverage []Coverage, benchmarks []*Benchmark)
 	OnError            func()
+	onLineRead         func(line string)
 	Output             *OutputBuffers
+	Raw                bool
 }
 
 type CreateStreamConsumerOptions struct {
@@ -35,6 +37,7 @@ type CreateStreamConsumerOptions struct {
 	WorkingDir string
 	Scanner    *bufio.Scanner
 	Output     *OutputBuffers
+	Raw        bool
 }
 
 type testStatus struct {
@@ -95,11 +98,25 @@ func (s *StreamConsumer) Run() {
 	var err error
 
 	for s.Scanner.Scan() {
-		err = s.ingest(s.Scanner.Bytes())
+		line := s.Scanner.Bytes()
+
+		if s.onLineRead != nil {
+			s.onLineRead(string(line))
+		}
+
+		if s.Raw {
+			continue
+		}
+
+		err = s.ingest(line)
 
 		if err != nil {
 			break
 		}
+	}
+
+	if s.Raw {
+		return
 	}
 
 	tests := maps.Values(s.Tests)
@@ -330,6 +347,7 @@ func CreateStreamConsumer(options CreateStreamConsumerOptions) *StreamConsumer {
 		OnFinish:           func(tests []*Test, coverage []Coverage, benchmarks []*Benchmark) {},
 		OnError:            func() {},
 		Output:             options.Output,
+		Raw:                options.Raw,
 	}
 }
 

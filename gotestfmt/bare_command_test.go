@@ -10,7 +10,7 @@ func TestShowHelp(t *testing.T) {
 	output := createBuffers()
 	exitcode := Run([]string{"-h"}, []string{}, output)
 
-	assert.Equal(t, 0, exitcode)
 	assertEqualToFileContent(t, "./test/expected/help.txt", output.Stdout.String())
+	assert.Equal(t, 0, exitcode)
 	assert.Empty(t, output.Stderr.String())
 }
