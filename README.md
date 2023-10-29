@@ -17,6 +17,12 @@ Here's the before and after:
 
 ![An image showing the comparison between the native output versus gotestfmt's](https://github.com/fnando/gotestfmt/raw/main/gotestfmt.png)
 
+Features:
+
+- Colored output
+- Dotenv files support
+- Tests and benchmark support
+
 ## Install
 
 Download the binary for your system from the
