@@ -1,4 +1,4 @@
 package gotestfmt
 
-// N.B.: This file is replaced during build
-var Arch = "0.0.0"
+// N.B.: This value is replaced during build
+var Arch = "unknown"

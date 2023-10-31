@@ -11,7 +11,7 @@ func TestShowDownloadURL(t *testing.T) {
 	exitcode := Run([]string{"download-url"}, []string{}, output)
 
 	assert.Empty(t, output.Stderr.String())
-	assert.Equal(t, "https://github.com/fnando/gotestfmt/releases/latest/download/gotestfmt-0.0.0\n", output.Stdout.String())
+	assert.Equal(t, "https://github.com/fnando/gotestfmt/releases/latest/download/gotestfmt-unknown\n", output.Stdout.String())
 	assert.Equal(t, 0, exitcode)
 }
 

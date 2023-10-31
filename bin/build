@@ -7,10 +7,10 @@ build() {
   arch=$2
   arch_file=./gotestfmt/arch.go
 
-  git checkout ./gotestfmt/arch.go &> /dev/null || true
-  printf "package gotestfmt\nvar Arch = \"$os-$arch\"\n" > $arch_file
-  env GOOS=$os GOARCH=$arch go build -o build/gotestfmt-$os-$arch cmd/gotestfmt.go
-  git checkout $arch_file &> /dev/null || true
+  env CGO_ENABLED=0 GOOS=$os GOARCH=$arch go build \
+    -o build/gotestfmt-$os-$arch \
+    -ldflags "-X com.github/fnando/gotestfmt/gotestmt.Arch=$arch" \
+    cmd/gotestfmt.go
 }
 
 rm -rf build
