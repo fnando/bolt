@@ -1,0 +1,41 @@
+FFF
+
+1) Equal Number Fail
+   /home/test/bolt/fail/main_test.go:19
+
+   Error:  Not equal:
+           expected: 1
+           actual  : 2
+
+2) Equal Struct Fail
+   /home/test/bolt/fail/main_test.go:29
+
+   Error:  Not equal:
+           expected: map[string]interface {}{"a":1, "b":2, "c":3}
+           actual  : map[string]interface {}{"a":1, "b":3, "c":2}
+
+           Diff:
+           --- Expected
+           +++ Actual
+           @@ -2,4 +2,4 @@
+           (string) (len=1) "a": (int) 1,
+           - (string) (len=1) "b": (int) 2,
+           - (string) (len=1) "c": (int) 3
+           + (string) (len=1) "b": (int) 3,
+           + (string) (len=1) "c": (int) 2
+           }
+
+3) Failed Through Helper
+   /home/test/bolt/fail/main_test.go:24
+
+   Error:  Not equal:
+           expected: 1
+           actual  : 2
+
+           /home/test/bolt/fail/main_test.go:14
+
+Finished in 0s, 3 tests, 3 failures, 0 skips, 0 benchmarks
+
+Coverage:
+
+[0.0%] github.com/fnando/bolt/test/reference/fail

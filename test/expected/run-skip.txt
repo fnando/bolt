@@ -1,0 +1,17 @@
+SS
+
+1) Skip Test With Message
+   /home/test/bolt/skip/main_test.go:13
+
+   Skipping this test
+
+2) Skip Test Without Message
+   /home/test/bolt/skip/main_test.go:18
+
+   [No message]
+
+Finished in 0s, 2 tests, 0 failures, 2 skips, 0 benchmarks
+
+Coverage:
+
+[0.0%] github.com/fnando/bolt/test/reference/skip

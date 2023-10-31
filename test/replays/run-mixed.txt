@@ -1,0 +1,97 @@
+{"Time":"2023-11-01T20:12:38.9373-07:00","Action":"start","Package":"github.com/fnando/bolt/test/reference/cov/letters"}
+{"Time":"2023-11-01T20:12:38.937401-07:00","Action":"start","Package":"github.com/fnando/bolt/test/reference/cov/numbers"}
+{"Time":"2023-11-01T20:12:38.937432-07:00","Action":"start","Package":"github.com/fnando/bolt/test/reference/fail"}
+{"Time":"2023-11-01T20:12:38.937446-07:00","Action":"start","Package":"github.com/fnando/bolt/test/reference/pass"}
+{"Time":"2023-11-01T20:12:38.937455-07:00","Action":"start","Package":"github.com/fnando/bolt/test/reference/skip"}
+{"Time":"2023-11-01T20:12:39.10855-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/cov/letters","Test":"TestA"}
+{"Time":"2023-11-01T20:12:39.108634-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/letters","Test":"TestA","Output":"=== RUN   TestA\n"}
+{"Time":"2023-11-01T20:12:39.108651-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/letters","Test":"TestA","Output":"--- PASS: TestA (0.00s)\n"}
+{"Time":"2023-11-01T20:12:39.108656-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/cov/letters","Test":"TestA","Elapsed":0}
+{"Time":"2023-11-01T20:12:39.108668-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/cov/letters","Test":"TestB"}
+{"Time":"2023-11-01T20:12:39.108671-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/letters","Test":"TestB","Output":"=== RUN   TestB\n"}
+{"Time":"2023-11-01T20:12:39.108675-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/letters","Test":"TestB","Output":"--- PASS: TestB (0.00s)\n"}
+{"Time":"2023-11-01T20:12:39.108686-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/cov/letters","Test":"TestB","Elapsed":0}
+{"Time":"2023-11-01T20:12:39.10869-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/letters","Output":"PASS\n"}
+{"Time":"2023-11-01T20:12:39.109135-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/letters","Output":"coverage: 66.7% of statements\n"}
+{"Time":"2023-11-01T20:12:39.10966-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/letters","Output":"ok  \tgithub.com/fnando/bolt/test/reference/cov/letters\t0.172s\tcoverage: 66.7% of statements\n"}
+{"Time":"2023-11-01T20:12:39.109674-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/cov/letters","Elapsed":0.172}
+{"Time":"2023-11-01T20:12:39.164121-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualNumberFail"}
+{"Time":"2023-11-01T20:12:39.164144-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualNumberFail","Output":"=== RUN   TestEqualNumberFail\n"}
+{"Time":"2023-11-01T20:12:39.174769-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualNumberFail","Output":"    /home/test/bolt/fail/main_test.go:19: \n"}
+{"Time":"2023-11-01T20:12:39.174789-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualNumberFail","Output":"        \tError Trace:\t/home/test/bolt/fail/main_test.go:19\n"}
+{"Time":"2023-11-01T20:12:39.17482-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualNumberFail","Output":"        \tError:      \tNot equal: \n"}
+{"Time":"2023-11-01T20:12:39.17483-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualNumberFail","Output":"        \t            \texpected: 1\n"}
+{"Time":"2023-11-01T20:12:39.174833-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualNumberFail","Output":"        \t            \tactual  : 2\n"}
+{"Time":"2023-11-01T20:12:39.174841-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualNumberFail","Output":"        \tTest:       \tTestEqualNumberFail\n"}
+{"Time":"2023-11-01T20:12:39.174858-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualNumberFail","Output":"--- FAIL: TestEqualNumberFail (0.01s)\n"}
+{"Time":"2023-11-01T20:12:39.174861-07:00","Action":"fail","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualNumberFail","Elapsed":0.01}
+{"Time":"2023-11-01T20:12:39.174866-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestFailedThroughHelper"}
+{"Time":"2023-11-01T20:12:39.174869-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestFailedThroughHelper","Output":"=== RUN   TestFailedThroughHelper\n"}
+{"Time":"2023-11-01T20:12:39.195929-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestFailedThroughHelper","Output":"    /home/test/bolt/fail/main_test.go:14: \n"}
+{"Time":"2023-11-01T20:12:39.195953-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestFailedThroughHelper","Output":"        \tError Trace:\t/home/test/bolt/fail/main_test.go:14\n"}
+{"Time":"2023-11-01T20:12:39.195957-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestFailedThroughHelper","Output":"        \t            \t\t\t\t/home/test/bolt/fail/main_test.go:24\n"}
+{"Time":"2023-11-01T20:12:39.195961-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestFailedThroughHelper","Output":"        \tError:      \tNot equal: \n"}
+{"Time":"2023-11-01T20:12:39.195964-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestFailedThroughHelper","Output":"        \t            \texpected: 1\n"}
+{"Time":"2023-11-01T20:12:39.195967-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestFailedThroughHelper","Output":"        \t            \tactual  : 2\n"}
+{"Time":"2023-11-01T20:12:39.19597-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestFailedThroughHelper","Output":"        \tTest:       \tTestFailedThroughHelper\n"}
+{"Time":"2023-11-01T20:12:39.195987-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestFailedThroughHelper","Output":"--- FAIL: TestFailedThroughHelper (0.02s)\n"}
+{"Time":"2023-11-01T20:12:39.19599-07:00","Action":"fail","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestFailedThroughHelper","Elapsed":0.02}
+{"Time":"2023-11-01T20:12:39.195994-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail"}
+{"Time":"2023-11-01T20:12:39.195996-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"=== RUN   TestEqualStructFail\n"}
+{"Time":"2023-11-01T20:12:39.226101-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/pass","Test":"TestEqualStringPass"}
+{"Time":"2023-11-01T20:12:39.22613-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/pass","Test":"TestEqualStringPass","Output":"=== RUN   TestEqualStringPass\n"}
+{"Time":"2023-11-01T20:12:39.226487-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"    /home/test/bolt/fail/main_test.go:29: \n"}
+{"Time":"2023-11-01T20:12:39.226493-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"        \tError Trace:\t/home/test/bolt/fail/main_test.go:29\n"}
+{"Time":"2023-11-01T20:12:39.226497-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"        \tError:      \tNot equal: \n"}
+{"Time":"2023-11-01T20:12:39.2265-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \texpected: map[string]interface {}{\"a\":1, \"b\":2, \"c\":3}\n"}
+{"Time":"2023-11-01T20:12:39.226518-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \tactual  : map[string]interface {}{\"a\":1, \"b\":3, \"c\":2}\n"}
+{"Time":"2023-11-01T20:12:39.226522-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t\n"}
+{"Time":"2023-11-01T20:12:39.226525-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \tDiff:\n"}
+{"Time":"2023-11-01T20:12:39.226527-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t--- Expected\n"}
+{"Time":"2023-11-01T20:12:39.22653-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t+++ Actual\n"}
+{"Time":"2023-11-01T20:12:39.226532-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t@@ -2,4 +2,4 @@\n"}
+{"Time":"2023-11-01T20:12:39.226535-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t  (string) (len=1) \"a\": (int) 1,\n"}
+{"Time":"2023-11-01T20:12:39.226542-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t- (string) (len=1) \"b\": (int) 2,\n"}
+{"Time":"2023-11-01T20:12:39.226545-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t- (string) (len=1) \"c\": (int) 3\n"}
+{"Time":"2023-11-01T20:12:39.226547-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t+ (string) (len=1) \"b\": (int) 3,\n"}
+{"Time":"2023-11-01T20:12:39.22655-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t+ (string) (len=1) \"c\": (int) 2\n"}
+{"Time":"2023-11-01T20:12:39.226553-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"        \t            \t }\n"}
+{"Time":"2023-11-01T20:12:39.226555-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"        \tTest:       \tTestEqualStructFail\n"}
+{"Time":"2023-11-01T20:12:39.226562-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Output":"--- FAIL: TestEqualStructFail (0.03s)\n"}
+{"Time":"2023-11-01T20:12:39.226564-07:00","Action":"fail","Package":"github.com/fnando/bolt/test/reference/fail","Test":"TestEqualStructFail","Elapsed":0.03}
+{"Time":"2023-11-01T20:12:39.226569-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Output":"FAIL\n"}
+{"Time":"2023-11-01T20:12:39.226793-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Output":"coverage: [no statements]\n"}
+{"Time":"2023-11-01T20:12:39.227518-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/fail","Output":"FAIL\tgithub.com/fnando/bolt/test/reference/fail\t0.290s\n"}
+{"Time":"2023-11-01T20:12:39.227575-07:00","Action":"fail","Package":"github.com/fnando/bolt/test/reference/fail","Elapsed":0.29}
+{"Time":"2023-11-01T20:12:39.237177-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/pass","Test":"TestEqualStringPass","Output":"--- PASS: TestEqualStringPass (0.01s)\n"}
+{"Time":"2023-11-01T20:12:39.237197-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/pass","Test":"TestEqualStringPass","Elapsed":0.01}
+{"Time":"2023-11-01T20:12:39.237215-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/pass","Test":"TestEqualNumberPass"}
+{"Time":"2023-11-01T20:12:39.237219-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/pass","Test":"TestEqualNumberPass","Output":"=== RUN   TestEqualNumberPass\n"}
+{"Time":"2023-11-01T20:12:39.258356-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/pass","Test":"TestEqualNumberPass","Output":"--- PASS: TestEqualNumberPass (0.02s)\n"}
+{"Time":"2023-11-01T20:12:39.258416-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/pass","Test":"TestEqualNumberPass","Elapsed":0.02}
+{"Time":"2023-11-01T20:12:39.258442-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/pass","Output":"PASS\n"}
+{"Time":"2023-11-01T20:12:39.259027-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/pass","Output":"coverage: [no statements]\n"}
+{"Time":"2023-11-01T20:12:39.260502-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/pass","Output":"ok  \tgithub.com/fnando/bolt/test/reference/pass\t0.322s\tcoverage: [no statements]\n"}
+{"Time":"2023-11-01T20:12:39.260596-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/pass","Elapsed":0.323}
+{"Time":"2023-11-01T20:12:39.281679-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/cov/numbers","Test":"TestOne"}
+{"Time":"2023-11-01T20:12:39.281702-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/numbers","Test":"TestOne","Output":"=== RUN   TestOne\n"}
+{"Time":"2023-11-01T20:12:39.281717-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/numbers","Test":"TestOne","Output":"--- PASS: TestOne (0.00s)\n"}
+{"Time":"2023-11-01T20:12:39.281721-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/cov/numbers","Test":"TestOne","Elapsed":0}
+{"Time":"2023-11-01T20:12:39.281729-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/numbers","Output":"PASS\n"}
+{"Time":"2023-11-01T20:12:39.282304-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/numbers","Output":"coverage: 100.0% of statements\n"}
+{"Time":"2023-11-01T20:12:39.282677-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/numbers","Output":"ok  \tgithub.com/fnando/bolt/test/reference/cov/numbers\t0.345s\tcoverage: 100.0% of statements\n"}
+{"Time":"2023-11-01T20:12:39.28272-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/cov/numbers","Elapsed":0.345}
+{"Time":"2023-11-01T20:12:39.335239-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithMessage"}
+{"Time":"2023-11-01T20:12:39.335268-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithMessage","Output":"=== RUN   TestSkipTestWithMessage\n"}
+{"Time":"2023-11-01T20:12:39.346662-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithMessage","Output":"    /home/test/bolt/skip/main_test.go:13: Skipping this test\n"}
+{"Time":"2023-11-01T20:12:39.346822-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithMessage","Output":"--- SKIP: TestSkipTestWithMessage (0.01s)\n"}
+{"Time":"2023-11-01T20:12:39.346841-07:00","Action":"skip","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithMessage","Elapsed":0.01}
+{"Time":"2023-11-01T20:12:39.346856-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithoutMessage"}
+{"Time":"2023-11-01T20:12:39.346868-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithoutMessage","Output":"=== RUN   TestSkipTestWithoutMessage\n"}
+{"Time":"2023-11-01T20:12:39.368139-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithoutMessage","Output":"    /home/test/bolt/skip/main_test.go:18: \n"}
+{"Time":"2023-11-01T20:12:39.36827-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithoutMessage","Output":"--- SKIP: TestSkipTestWithoutMessage (0.02s)\n"}
+{"Time":"2023-11-01T20:12:39.368322-07:00","Action":"skip","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithoutMessage","Elapsed":0.02}
+{"Time":"2023-11-01T20:12:39.368353-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Output":"PASS\n"}
+{"Time":"2023-11-01T20:12:39.369571-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Output":"coverage: [no statements]\n"}
+{"Time":"2023-11-01T20:12:39.370587-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Output":"ok  \tgithub.com/fnando/bolt/test/reference/skip\t0.431s\tcoverage: [no statements]\n"}
+{"Time":"2023-11-01T20:12:39.370621-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/skip","Elapsed":0.433}

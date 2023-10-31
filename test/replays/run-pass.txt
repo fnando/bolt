@@ -1,0 +1,13 @@
+{"Time":"2023-10-31T12:15:22.77295-07:00","Action":"start","Package":"github.com/fnando/bolt/test/reference/pass"}
+{"Time":"2023-10-31T12:15:22.773043-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/pass","Test":"TestEqualStringPass"}
+{"Time":"2023-10-31T12:15:22.77305-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/pass","Test":"TestEqualStringPass","Output":"=== RUN   TestEqualStringPass\n"}
+{"Time":"2023-10-31T12:15:22.773062-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/pass","Test":"TestEqualStringPass","Output":"--- PASS: TestEqualStringPass (0.01s)\n"}
+{"Time":"2023-10-31T12:15:22.773067-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/pass","Test":"TestEqualStringPass","Elapsed":0.01}
+{"Time":"2023-10-31T12:15:22.773184-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/pass","Test":"TestEqualNumberPass"}
+{"Time":"2023-10-31T12:15:22.773188-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/pass","Test":"TestEqualNumberPass","Output":"=== RUN   TestEqualNumberPass\n"}
+{"Time":"2023-10-31T12:15:22.773192-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/pass","Test":"TestEqualNumberPass","Output":"--- PASS: TestEqualNumberPass (0.02s)\n"}
+{"Time":"2023-10-31T12:15:22.773196-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/pass","Test":"TestEqualNumberPass","Elapsed":0.02}
+{"Time":"2023-10-31T12:15:22.7732-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/pass","Output":"PASS\n"}
+{"Time":"2023-10-31T12:15:22.773204-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/pass","Output":"coverage: [no statements]\n"}
+{"Time":"2023-10-31T12:15:22.773207-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/pass","Output":"ok  \tgithub.com/fnando/bolt/test/reference/pass\t(cached)\tcoverage: [no statements]\n"}
+{"Time":"2023-10-31T12:15:22.773212-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/pass","Elapsed":0}

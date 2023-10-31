@@ -1,0 +1,47 @@
+{"Time":"2023-11-02T23:41:53.668273-07:00","Action":"start","Package":"github.com/fnando/bolt/test/reference/bench"}
+{"Time":"2023-11-02T23:41:53.91731-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Output":"goos: darwin\n"}
+{"Time":"2023-11-02T23:41:53.917396-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Output":"goarch: arm64\n"}
+{"Time":"2023-11-02T23:41:53.91742-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Output":"pkg: github.com/fnando/bolt/test/reference/bench\n"}
+{"Time":"2023-11-02T23:41:53.917445-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib1"}
+{"Time":"2023-11-02T23:41:53.917454-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib1","Output":"=== RUN   BenchmarkFib1\n"}
+{"Time":"2023-11-02T23:41:53.917462-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib1","Output":"BenchmarkFib1\n"}
+{"Time":"2023-11-02T23:41:55.377249-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib1","Output":"BenchmarkFib1-8    \t566330918\t         2.197 ns/op\n"}
+{"Time":"2023-11-02T23:41:55.377376-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib2"}
+{"Time":"2023-11-02T23:41:55.377384-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib2","Output":"=== RUN   BenchmarkFib2\n"}
+{"Time":"2023-11-02T23:41:55.37739-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib2","Output":"BenchmarkFib2\n"}
+{"Time":"2023-11-02T23:41:56.978272-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib2","Output":"BenchmarkFib2-8    \t298994288\t         3.992 ns/op\n"}
+{"Time":"2023-11-02T23:41:56.978311-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib3"}
+{"Time":"2023-11-02T23:41:56.978315-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib3","Output":"=== RUN   BenchmarkFib3\n"}
+{"Time":"2023-11-02T23:41:56.978319-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib3","Output":"BenchmarkFib3\n"}
+{"Time":"2023-11-02T23:41:58.69266-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib3","Output":"BenchmarkFib3-8    \t192511720\t         5.631 ns/op\n"}
+{"Time":"2023-11-02T23:41:58.692693-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib4"}
+{"Time":"2023-11-02T23:41:58.692698-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib4","Output":"=== RUN   BenchmarkFib4\n"}
+{"Time":"2023-11-02T23:41:58.692702-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib4","Output":"BenchmarkFib4\n"}
+{"Time":"2023-11-02T23:41:59.708749-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib4","Output":"BenchmarkFib4-8    \t100000000\t        10.05 ns/op\n"}
+{"Time":"2023-11-02T23:41:59.70886-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib5"}
+{"Time":"2023-11-02T23:41:59.708873-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib5","Output":"=== RUN   BenchmarkFib5\n"}
+{"Time":"2023-11-02T23:41:59.708879-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib5","Output":"BenchmarkFib5\n"}
+{"Time":"2023-11-02T23:42:01.021149-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib5","Output":"BenchmarkFib5-8    \t74124212\t        17.47 ns/op\n"}
+{"Time":"2023-11-02T23:42:01.02118-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib6"}
+{"Time":"2023-11-02T23:42:01.021201-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib6","Output":"=== RUN   BenchmarkFib6\n"}
+{"Time":"2023-11-02T23:42:01.021205-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib6","Output":"BenchmarkFib6\n"}
+{"Time":"2023-11-02T23:42:02.211592-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib6","Output":"BenchmarkFib6-8    \t42731238\t        27.17 ns/op\n"}
+{"Time":"2023-11-02T23:42:02.211638-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib7"}
+{"Time":"2023-11-02T23:42:02.211644-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib7","Output":"=== RUN   BenchmarkFib7\n"}
+{"Time":"2023-11-02T23:42:02.211649-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib7","Output":"BenchmarkFib7\n"}
+{"Time":"2023-11-02T23:42:03.465442-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib7","Output":"BenchmarkFib7-8    \t27418387\t        44.08 ns/op\n"}
+{"Time":"2023-11-02T23:42:03.465485-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib8"}
+{"Time":"2023-11-02T23:42:03.465492-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib8","Output":"=== RUN   BenchmarkFib8\n"}
+{"Time":"2023-11-02T23:42:03.465497-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib8","Output":"BenchmarkFib8\n"}
+{"Time":"2023-11-02T23:42:04.768546-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib8","Output":"BenchmarkFib8-8    \t16780087\t        73.30 ns/op\n"}
+{"Time":"2023-11-02T23:42:04.768577-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib9"}
+{"Time":"2023-11-02T23:42:04.768584-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib9","Output":"=== RUN   BenchmarkFib9\n"}
+{"Time":"2023-11-02T23:42:04.768589-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib9","Output":"BenchmarkFib9\n"}
+{"Time":"2023-11-02T23:42:06.039163-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib9","Output":"BenchmarkFib9-8    \t 9679800\t       118.2 ns/op\n"}
+{"Time":"2023-11-02T23:42:06.039206-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib10"}
+{"Time":"2023-11-02T23:42:06.039212-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib10","Output":"=== RUN   BenchmarkFib10\n"}
+{"Time":"2023-11-02T23:42:06.039218-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib10","Output":"BenchmarkFib10\n"}
+{"Time":"2023-11-02T23:42:07.429387-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Test":"BenchmarkFib10","Output":"BenchmarkFib10-8   \t 6393661\t       187.6 ns/op\n"}
+{"Time":"2023-11-02T23:42:07.429421-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Output":"PASS\n"}
+{"Time":"2023-11-02T23:42:07.429741-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/bench","Output":"ok  \tgithub.com/fnando/bolt/test/reference/bench\t13.760s\n"}
+{"Time":"2023-11-02T23:42:07.429763-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/bench","Elapsed":13.761}

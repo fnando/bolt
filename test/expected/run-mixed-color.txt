@@ -1,0 +1,54 @@
+[32m.[0m[32m.[0m[31mF[0m[31mF[0m[31mF[0m[32m.[0m[32m.[0m[32m.[0m[33mS[0m[33mS[0m
+
+[31m1) Equal Number Fail[0m
+   [34m/home/test/bolt/fail/main_test.go:19[0m
+
+   [30mError:  Not equal:[0m
+   [30m        [30mexpected:[0m [32m1[0m[0m
+   [30m        [30mactual  :[0m [31m2[0m[0m
+
+[31m2) Equal Struct Fail[0m
+   [34m/home/test/bolt/fail/main_test.go:29[0m
+
+   [30mError:  Not equal:[0m
+   [30m        [30mexpected:[0m [32mmap[string]interface {}{"a":1, "b":2, "c":3}[0m[0m
+   [30m        [30mactual  :[0m [31mmap[string]interface {}{"a":1, "b":3, "c":2}[0m[0m
+
+   [30m        Diff:[0m
+   [30m        [32m--- Expected[0m[0m
+   [30m        [31m+++ Actual[0m[0m
+   [30m        [34m@@ -2,4 +2,4 @@[0m[0m
+   [30m        (string) (len=1) "a": (int) 1,[0m
+   [30m        [32m- (string) (len=1) "b": (int) 2,[0m[0m
+   [30m        [32m- (string) (len=1) "c": (int) 3[0m[0m
+   [30m        [31m+ (string) (len=1) "b": (int) 3,[0m[0m
+   [30m        [31m+ (string) (len=1) "c": (int) 2[0m[0m
+   [30m        }[0m
+
+[31m3) Failed Through Helper[0m
+   [34m/home/test/bolt/fail/main_test.go:24[0m
+
+   [30mError:  Not equal:[0m
+   [30m        [30mexpected:[0m [32m1[0m[0m
+   [30m        [30mactual  :[0m [31m2[0m[0m
+
+           [31m/home/test/bolt/fail/main_test.go:14[0m
+
+[33m4) Skip Test With Message[0m
+   [34m/home/test/bolt/skip/main_test.go:13[0m
+
+   [30mSkipping this test[0m
+
+[33m5) Skip Test Without Message[0m
+   [34m/home/test/bolt/skip/main_test.go:18[0m
+
+   [30m[No message][0m
+[31m
+Finished in 0s, 10 tests, 3 failures, 2 skips, 0 benchmarks
+[0m
+[30mCoverage:[0m
+
+[31m[0.0%] github.com/fnando/bolt/test/reference/fail[0m
+[31m[0.0%] github.com/fnando/bolt/test/reference/pass[0m
+[31m[0.0%] github.com/fnando/bolt/test/reference/skip[0m
+[33m[66.7%] github.com/fnando/bolt/test/reference/cov/letters[0m

@@ -1,0 +1,3 @@
+# github.com/fnando/bolt/test/reference/fail [github.com/fnando/bolt/test/reference/fail.test]
+test/reference/fail/main_test.go:7:2: "os" imported and not used
+FAIL	github.com/fnando/bolt/test/reference/fail [build failed]

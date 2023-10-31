@@ -1,0 +1,79 @@
+
+Run tests by wrapping "go tests".
+
+  Usage: bolt [options] [packages...] -- [additional "go test" arguments]
+
+  Options:
+    --compat                           Don't append -fullpath, available on go 1.21 or new (default to false)
+    --coverage-count=COUNT             Number of coverate items to show (default to 10)
+    --coverage-threshold=THRESHOLD     Anything below this threshold will be listed (default to 100)
+    --env=ENV                          Load env file (default to .env.test)
+    --hide-coverage                    Don't display the coverage section (default to false)
+    --hide-slowest                     Don't display the slowest tests section (default to false)
+    --no-color                         Disable colored output. When unset, respects the NO_COLOR=1 env var (default to false)
+    --raw                              Don't append arguments to `go test` (default to false)
+    --slowest-count=COUNT              Number of slowest tests to show (default to 10)
+    --slowest-threshold=THRESHOLD      Anything above this threshold will be listed. Must be a valid duration string (default to 1s)
+
+
+  Available reporters:
+    progress
+      Print a character for each test, with a test summary and list of
+      failed/skipped tests.
+
+    json
+      Print a JSON representation of the bolt state.
+
+
+  How it works:
+    This is what bolt runs if you execute "bolt ./...":
+
+    $ go test ./... -cover -json -fullpath
+
+    You can pass additional arguments to the "go test" command like this:
+
+    $ bolt ./... -- -run TestExample
+
+    These arguments will be appended to the default arguments used by bolt.
+    The example above would be executed like this:
+
+    $ go test -cover -json -fullpath -run TestExample ./...
+
+    To execute a raw "go test" command, use the switch --raw. This will avoid
+    default arguments from being added to the final execution. In practice, it
+    means you'll need to run the whole command:
+
+    $ bolt --raw -- ./some_module -run TestExample
+
+    Note: -fullpath was introduced on go 1.21. If you're using an older
+    version, you can use --compat or manually set arguments by using --raw.
+
+
+  Env files:
+    bolt will load .env.test by default. You can also set it to a
+    different file by using --env. If you want to disable env files
+    completely, use --env=false.
+
+
+  Color:
+    bolt will output colored text based on ANSI colors. By default, the
+    following env vars will be used and you can override any of them to set
+    a custom color:
+
+    export BOLT_TEXT_COLOR="30"
+    export BOLT_FAIL_COLOR="31"
+    export BOLT_PASS_COLOR="32"
+    export BOLT_SKIP_COLOR="33"
+    export BOLT_DETAIL_COLOR="34"
+
+    To disable colored output you can use "--no-color" or
+    set the env var NO_COLOR=1.
+
+
+  Progress reporter:
+    You can override the default progress symbols by setting env vars. The
+    following example shows how to use emojis instead:
+
+    export BOLT_FAIL_SYMBOL=❌
+    export BOLT_PASS_SYMBOL=⚡️
+    export BOLT_SKIP_SYMBOL=😴

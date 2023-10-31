@@ -1,0 +1,15 @@
+{"Time":"2023-11-01T16:11:01.632467-07:00","Action":"start","Package":"github.com/fnando/bolt/test/reference/skip"}
+{"Time":"2023-11-01T16:11:01.731999-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithMessage"}
+{"Time":"2023-11-01T16:11:01.73204-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithMessage","Output":"=== RUN   TestSkipTestWithMessage\n"}
+{"Time":"2023-11-01T16:11:01.743099-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithMessage","Output":"    /home/test/bolt/skip/main_test.go:13: Skipping this test\n"}
+{"Time":"2023-11-01T16:11:01.743219-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithMessage","Output":"--- SKIP: TestSkipTestWithMessage (0.01s)\n"}
+{"Time":"2023-11-01T16:11:01.743235-07:00","Action":"skip","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithMessage","Elapsed":0.01}
+{"Time":"2023-11-01T16:11:01.743275-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithoutMessage"}
+{"Time":"2023-11-01T16:11:01.743283-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithoutMessage","Output":"=== RUN   TestSkipTestWithoutMessage\n"}
+{"Time":"2023-11-01T16:11:01.764298-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithoutMessage","Output":"    /home/test/bolt/skip/main_test.go:18: \n"}
+{"Time":"2023-11-01T16:11:01.764358-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithoutMessage","Output":"--- SKIP: TestSkipTestWithoutMessage (0.02s)\n"}
+{"Time":"2023-11-01T16:11:01.76439-07:00","Action":"skip","Package":"github.com/fnando/bolt/test/reference/skip","Test":"TestSkipTestWithoutMessage","Elapsed":0.02}
+{"Time":"2023-11-01T16:11:01.764403-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Output":"PASS\n"}
+{"Time":"2023-11-01T16:11:01.764997-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Output":"coverage: [no statements]\n"}
+{"Time":"2023-11-01T16:11:01.765502-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/skip","Output":"ok  \tgithub.com/fnando/bolt/test/reference/skip\t0.133s\tcoverage: [no statements]\n"}
+{"Time":"2023-11-01T16:11:01.76556-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/skip","Elapsed":0.133}

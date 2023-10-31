@@ -1,0 +1,211 @@
+{
+  "Coverage": [
+    {
+      "Package": "github.com/fnando/bolt/test/reference/fail",
+      "Coverage": 0
+    },
+    {
+      "Package": "github.com/fnando/bolt/test/reference/pass",
+      "Coverage": 0
+    },
+    {
+      "Package": "github.com/fnando/bolt/test/reference/skip",
+      "Coverage": 0
+    },
+    {
+      "Package": "github.com/fnando/bolt/test/reference/cov/letters",
+      "Coverage": 66.7
+    }
+  ],
+  "Tests": [
+    {
+      "ErrorTrace": "",
+      "Source": "",
+      "ReadableName": "A",
+      "Name": "TestA",
+      "StartedAt": "2023-11-02T23:27:41.152737-07:00",
+      "EndedAt": "2023-11-02T23:27:41.152772-07:00",
+      "Elapsed": 34625,
+      "Output": [
+        "=== RUN   TestA",
+        "--- PASS: TestA (0.00s)"
+      ],
+      "Status": "pass",
+      "SkipMessage": "",
+      "Package": "github.com/fnando/bolt/test/reference/cov/letters"
+    },
+    {
+      "ErrorTrace": "",
+      "Source": "",
+      "ReadableName": "B",
+      "Name": "TestB",
+      "StartedAt": "2023-11-02T23:27:41.152774-07:00",
+      "EndedAt": "2023-11-02T23:27:41.152784-07:00",
+      "Elapsed": 10792,
+      "Output": [
+        "=== RUN   TestB",
+        "--- PASS: TestB (0.00s)"
+      ],
+      "Status": "pass",
+      "SkipMessage": "",
+      "Package": "github.com/fnando/bolt/test/reference/cov/letters"
+    },
+    {
+      "ErrorTrace": "",
+      "Source": "",
+      "ReadableName": "One",
+      "Name": "TestOne",
+      "StartedAt": "2023-11-02T23:27:41.153153-07:00",
+      "EndedAt": "2023-11-02T23:27:41.153168-07:00",
+      "Elapsed": 15541,
+      "Output": [
+        "=== RUN   TestOne",
+        "--- PASS: TestOne (0.00s)"
+      ],
+      "Status": "pass",
+      "SkipMessage": "",
+      "Package": "github.com/fnando/bolt/test/reference/cov/numbers"
+    },
+    {
+      "ErrorTrace": "/home/test/bolt/fail/main_test.go:19",
+      "Source": "",
+      "ReadableName": "Equal Number Fail",
+      "Name": "TestEqualNumberFail",
+      "StartedAt": "2023-11-02T23:27:41.152809-07:00",
+      "EndedAt": "2023-11-02T23:27:41.152869-07:00",
+      "Elapsed": 59250,
+      "Output": [
+        "=== RUN   TestEqualNumberFail",
+        "    /home/test/bolt/fail/main_test.go:19: ",
+        "        \tError:      \tNot equal: ",
+        "        \t            \texpected: 1",
+        "        \t            \tactual  : 2",
+        "        \tTest:       \tTestEqualNumberFail",
+        "--- FAIL: TestEqualNumberFail (0.01s)"
+      ],
+      "Status": "fail",
+      "SkipMessage": "",
+      "Package": "github.com/fnando/bolt/test/reference/fail"
+    },
+    {
+      "ErrorTrace": "/home/test/bolt/fail/main_test.go:29",
+      "Source": "",
+      "ReadableName": "Equal Struct Fail",
+      "Name": "TestEqualStructFail",
+      "StartedAt": "2023-11-02T23:27:41.152936-07:00",
+      "EndedAt": "2023-11-02T23:27:41.153098-07:00",
+      "Elapsed": 162209,
+      "Output": [
+        "=== RUN   TestEqualStructFail",
+        "    /home/test/bolt/fail/main_test.go:29: ",
+        "        \tError:      \tNot equal: ",
+        "        \t            \texpected: map[string]interface {}{\"a\":1, \"b\":2, \"c\":3}",
+        "        \t            \tactual  : map[string]interface {}{\"a\":1, \"b\":3, \"c\":2}",
+        "        \t            \t",
+        "        \t            \tDiff:",
+        "        \t            \t--- Expected",
+        "        \t            \t+++ Actual",
+        "        \t            \t@@ -2,4 +2,4 @@",
+        "        \t            \t  (string) (len=1) \"a\": (int) 1,",
+        "        \t            \t- (string) (len=1) \"b\": (int) 2,",
+        "        \t            \t- (string) (len=1) \"c\": (int) 3",
+        "        \t            \t+ (string) (len=1) \"b\": (int) 3,",
+        "        \t            \t+ (string) (len=1) \"c\": (int) 2",
+        "        \t            \t }",
+        "        \tTest:       \tTestEqualStructFail",
+        "--- FAIL: TestEqualStructFail (0.03s)"
+      ],
+      "Status": "fail",
+      "SkipMessage": "",
+      "Package": "github.com/fnando/bolt/test/reference/fail"
+    },
+    {
+      "ErrorTrace": "/home/test/bolt/fail/main_test.go:24",
+      "Source": "/home/test/bolt/fail/main_test.go:14",
+      "ReadableName": "Failed Through Helper",
+      "Name": "TestFailedThroughHelper",
+      "StartedAt": "2023-11-02T23:27:41.152871-07:00",
+      "EndedAt": "2023-11-02T23:27:41.152934-07:00",
+      "Elapsed": 62125,
+      "Output": [
+        "=== RUN   TestFailedThroughHelper",
+        "    /home/test/bolt/fail/main_test.go:14: ",
+        "        \tError:      \tNot equal: ",
+        "        \t            \texpected: 1",
+        "        \t            \tactual  : 2",
+        "        \tTest:       \tTestFailedThroughHelper",
+        "--- FAIL: TestFailedThroughHelper (0.02s)"
+      ],
+      "Status": "fail",
+      "SkipMessage": "",
+      "Package": "github.com/fnando/bolt/test/reference/fail"
+    },
+    {
+      "ErrorTrace": "",
+      "Source": "",
+      "ReadableName": "Equal Number Pass",
+      "Name": "TestEqualNumberPass",
+      "StartedAt": "2023-11-02T23:27:41.153123-07:00",
+      "EndedAt": "2023-11-02T23:27:41.153136-07:00",
+      "Elapsed": 12500,
+      "Output": [
+        "=== RUN   TestEqualNumberPass",
+        "--- PASS: TestEqualNumberPass (0.02s)"
+      ],
+      "Status": "pass",
+      "SkipMessage": "",
+      "Package": "github.com/fnando/bolt/test/reference/pass"
+    },
+    {
+      "ErrorTrace": "",
+      "Source": "",
+      "ReadableName": "Equal String Pass",
+      "Name": "TestEqualStringPass",
+      "StartedAt": "2023-11-02T23:27:41.152943-07:00",
+      "EndedAt": "2023-11-02T23:27:41.153119-07:00",
+      "Elapsed": 176042,
+      "Output": [
+        "=== RUN   TestEqualStringPass",
+        "--- PASS: TestEqualStringPass (0.01s)"
+      ],
+      "Status": "pass",
+      "SkipMessage": "",
+      "Package": "github.com/fnando/bolt/test/reference/pass"
+    },
+    {
+      "ErrorTrace": "/home/test/bolt/skip/main_test.go:13",
+      "Source": "",
+      "ReadableName": "Skip Test With Message",
+      "Name": "TestSkipTestWithMessage",
+      "StartedAt": "2023-11-02T23:27:41.153185-07:00",
+      "EndedAt": "2023-11-02T23:27:41.153206-07:00",
+      "Elapsed": 21167,
+      "Output": [
+        "=== RUN   TestSkipTestWithMessage",
+        "Skipping this test",
+        "--- SKIP: TestSkipTestWithMessage (0.01s)"
+      ],
+      "Status": "skip",
+      "SkipMessage": "",
+      "Package": "github.com/fnando/bolt/test/reference/skip"
+    },
+    {
+      "ErrorTrace": "/home/test/bolt/skip/main_test.go:18",
+      "Source": "",
+      "ReadableName": "Skip Test Without Message",
+      "Name": "TestSkipTestWithoutMessage",
+      "StartedAt": "2023-11-02T23:27:41.153279-07:00",
+      "EndedAt": "2023-11-02T23:27:41.153306-07:00",
+      "Elapsed": 27542,
+      "Output": [
+        "=== RUN   TestSkipTestWithoutMessage",
+        "[No message]",
+        "--- SKIP: TestSkipTestWithoutMessage (0.02s)"
+      ],
+      "Status": "skip",
+      "SkipMessage": "",
+      "Package": "github.com/fnando/bolt/test/reference/skip"
+    }
+  ],
+  "Elapsed": 714500
+}

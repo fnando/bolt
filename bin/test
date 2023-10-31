@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+mkdir -p coverage
+rm -rf coverage/*.*
+go test -coverprofile=coverage/coverage.out -cover -v ./... $@
+go tool cover -html=coverage/coverage.out -o=coverage/index.html

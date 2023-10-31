@@ -1,0 +1,22 @@
+{"Time":"2023-11-01T18:25:16.040986-07:00","Action":"start","Package":"github.com/fnando/bolt/test/reference/cov/letters"}
+{"Time":"2023-11-01T18:25:16.041771-07:00","Action":"start","Package":"github.com/fnando/bolt/test/reference/cov/numbers"}
+{"Time":"2023-11-01T18:25:16.298351-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/cov/letters","Test":"TestA"}
+{"Time":"2023-11-01T18:25:16.298511-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/letters","Test":"TestA","Output":"=== RUN   TestA\n"}
+{"Time":"2023-11-01T18:25:16.298541-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/letters","Test":"TestA","Output":"--- PASS: TestA (0.00s)\n"}
+{"Time":"2023-11-01T18:25:16.29855-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/cov/letters","Test":"TestA","Elapsed":0}
+{"Time":"2023-11-01T18:25:16.298563-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/cov/letters","Test":"TestB"}
+{"Time":"2023-11-01T18:25:16.298567-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/letters","Test":"TestB","Output":"=== RUN   TestB\n"}
+{"Time":"2023-11-01T18:25:16.298572-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/letters","Test":"TestB","Output":"--- PASS: TestB (0.00s)\n"}
+{"Time":"2023-11-01T18:25:16.298577-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/cov/letters","Test":"TestB","Elapsed":0}
+{"Time":"2023-11-01T18:25:16.298581-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/letters","Output":"PASS\n"}
+{"Time":"2023-11-01T18:25:16.299222-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/letters","Output":"coverage: 66.7% of statements\n"}
+{"Time":"2023-11-01T18:25:16.299838-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/letters","Output":"ok  \tgithub.com/fnando/bolt/test/reference/cov/letters\t0.258s\tcoverage: 66.7% of statements\n"}
+{"Time":"2023-11-01T18:25:16.299882-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/cov/letters","Elapsed":0.259}
+{"Time":"2023-11-01T18:25:16.409424-07:00","Action":"run","Package":"github.com/fnando/bolt/test/reference/cov/numbers","Test":"TestOne"}
+{"Time":"2023-11-01T18:25:16.409455-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/numbers","Test":"TestOne","Output":"=== RUN   TestOne\n"}
+{"Time":"2023-11-01T18:25:16.409478-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/numbers","Test":"TestOne","Output":"--- PASS: TestOne (0.00s)\n"}
+{"Time":"2023-11-01T18:25:16.409499-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/cov/numbers","Test":"TestOne","Elapsed":0}
+{"Time":"2023-11-01T18:25:16.409517-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/numbers","Output":"PASS\n"}
+{"Time":"2023-11-01T18:25:16.410355-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/numbers","Output":"coverage: 100.0% of statements\n"}
+{"Time":"2023-11-01T18:25:16.410743-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/cov/numbers","Output":"ok  \tgithub.com/fnando/bolt/test/reference/cov/numbers\t0.369s\tcoverage: 100.0% of statements\n"}
+{"Time":"2023-11-01T18:25:16.410762-07:00","Action":"pass","Package":"github.com/fnando/bolt/test/reference/cov/numbers","Elapsed":0.369}
