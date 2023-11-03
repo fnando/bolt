@@ -1,6 +1,6 @@
 package common
 
-var Version string = "0.0.1"
+var Version string = "0.0.2"
 
 var Arch string = "unknown"
 
