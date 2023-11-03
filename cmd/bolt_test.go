@@ -213,6 +213,17 @@ func TestRunCommand(t *testing.T) {
 		require.Equal(t, 1, result.exitcode)
 	})
 
+	t.Run("ReplayNoTests", func(t *testing.T) {
+		result, err := run(
+			[]string{"run", "--no-color", "--replay", "test/replays/run-no-tests.txt"},
+			[]string{},
+		)
+
+		require.NoError(t, err)
+		require.Equal(t, read("test/expected/run-no-tests.txt"), replaceSummary(result.stdout))
+		require.Equal(t, 0, result.exitcode)
+	})
+
 	t.Run("JSON", func(t *testing.T) {
 		c.Clock.Now = func() time.Time {
 			t, _ := time.Parse(time.RFC3339, "2023-10-26T14:41:41.05297-07:00")

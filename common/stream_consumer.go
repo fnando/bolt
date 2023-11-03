@@ -84,7 +84,14 @@ func (consumer StreamConsumer) Ingest(scanner *bufio.Scanner) {
 func (consumer StreamConsumer) process(stream Stream) {
 	switch stream.Action {
 	case "start":
-		// Suite started running
+		if stream.Package != "" {
+			_, exists := consumer.Aggregation.CoverageMap[stream.Package]
+
+			if !exists {
+				coverage := Coverage{Package: stream.Package}
+				consumer.Aggregation.CoverageMap[coverage.Package] = &coverage
+			}
+		}
 
 	case "run":
 		// A test/benchmark just started running.
@@ -99,10 +106,7 @@ func (consumer StreamConsumer) process(stream Stream) {
 				StartedAt:       time.Now(),
 			}
 
-			coverage := Coverage{Package: test.Package}
-
 			consumer.Aggregation.TestsMap[test.Key] = &test
-			consumer.Aggregation.CoverageMap[coverage.Package] = &coverage
 		} else if strings.HasPrefix(stream.Test, "Benchmark") {
 			benchmark := Benchmark{
 				Name:    stream.Test,

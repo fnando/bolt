@@ -1,0 +1,3 @@
+{"Time":"2023-11-03T09:24:33.675428-07:00","Action":"start","Package":"github.com/fnando/bolt/test/reference/no-tests"}
+{"Time":"2023-11-03T09:24:33.675478-07:00","Action":"output","Package":"github.com/fnando/bolt/test/reference/no-tests","Output":"?   \tgithub.com/fnando/bolt/test/reference/no-tests\t[no test files]\n"}
+{"Time":"2023-11-03T09:24:33.675485-07:00","Action":"skip","Package":"github.com/fnando/bolt/test/reference/no-tests","Elapsed":0}

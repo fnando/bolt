@@ -1,0 +1,7 @@
+
+
+Finished in 0s, 0 tests, 0 failures, 0 skips, 0 benchmarks
+
+Coverage:
+
+[0.0%] github.com/fnando/bolt/test/reference/no-tests
