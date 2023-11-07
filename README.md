@@ -165,5 +165,5 @@ space for collaboration, and contributors are expected to adhere to the
 
 ## License
 
-The gem is available as open source under the terms of the
+This project is available as open source under the terms of the
 [MIT License](https://opensource.org/licenses/MIT).
