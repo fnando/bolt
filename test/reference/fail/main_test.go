@@ -4,7 +4,6 @@
 package fail
 
 import (
-	"os"
 	"testing"
 	"time"
 
