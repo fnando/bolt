@@ -32,6 +32,7 @@ type RunArgs struct {
 	SlowestCount      int
 	SlowestThreshold  string
 	WorkingDir        string
+	PostRunCommand    string
 }
 
 var usage string = `
@@ -103,6 +104,32 @@ Run tests by wrapping "go tests".
     export BOLT_FAIL_SYMBOL=❌
     export BOLT_PASS_SYMBOL=⚡️
     export BOLT_SKIP_SYMBOL=😴
+
+
+  Post run command:
+    You can run any commands after the runner is done by using
+    --post-run-command. The command will receive the following environment
+    variables.
+
+    BOLT_SUMMARY
+      a text summarizing the tests
+    BOLT_TITLE
+      a text that can be used as the title (e.g. Passed!)
+    BOLT_TEST_COUNT
+      a number representing the total number of tests
+    BOLT_FAIL_COUNT
+      a number representing the total number of failed tests
+    BOLT_PASS_COUNT
+      a number representing the total number of passing tests
+    BOLT_SKIP_COUNT
+      a number representing the total number of skipped tests
+    BOLT_BENCHMARK_COUNT
+      a number representing the total number of benchmarks
+    BOLT_ELAPSED
+      a string representing the duration (e.g. 1m20s)
+    BOLT_ELAPSED_NANOSECONDS
+      an integer string representing the duration in nanoseconds
+
 `
 
 func Run(args []string, options RunArgs, output *c.Output) int {
@@ -125,6 +152,7 @@ func Run(args []string, options RunArgs, output *c.Output) int {
 	flags.Float64Var(&options.CoverageThreshold, "coverage-threshold", 100.0, "Anything below this threshold will be listed")
 	flags.StringVar(&options.SlowestThreshold, "slowest-threshold", "1s", "Anything above this threshold will be listed. Must be a valid duration string")
 	flags.IntVar(&options.SlowestCount, "slowest-count", 10, "Number of slowest tests to show")
+	flags.StringVar(&options.PostRunCommand, "post-run-command", "", "Run a command after runner is done")
 
 	flags.BoolVar(&options.Debug, "debug", false, "")
 	flags.StringVar(&options.Replay, "replay", "", "")
@@ -188,29 +216,45 @@ func Run(args []string, options RunArgs, output *c.Output) int {
 			SlowestCount:      options.SlowestCount,
 		},
 	}
-	var reporter reporters.Reporter
+
+	reporterList := []reporters.Reporter{
+		reporters.PostRunCommandReporter{Output: output, Command: options.PostRunCommand},
+	}
 
 	if options.Reporter == "progress" {
-		reporter = reporters.ProgressReporter{Output: output}
+		reporterList = append(reporterList, reporters.ProgressReporter{Output: output})
 	} else if options.Reporter == "standard" {
-		reporter = reporters.StandardReporter{Output: output}
+		reporterList = append(reporterList, reporters.StandardReporter{Output: output})
 	} else if options.Reporter == "json" {
-		reporter = reporters.JSONReporter{Output: output}
+		reporterList = append(reporterList, reporters.JSONReporter{Output: output})
 	} else {
 		fmt.Fprintf(output.Stderr, "%s %s\n", c.Color.Fail("ERROR:"), "Invalid reporter")
 		return 1
 	}
 
-	consumer.OnData = func(line string) { reporter.OnData(line) }
-	consumer.OnProgress = func(test c.Test) { reporter.OnProgress(test) }
+	consumer.OnData = func(line string) {
+		for _, reporter := range reporterList {
+			reporter.OnData(line)
+		}
+	}
+
+	consumer.OnProgress = func(test c.Test) {
+		for _, reporter := range reporterList {
+			reporter.OnProgress(test)
+		}
+	}
+
 	consumer.OnFinished = func(aggregation *c.Aggregation) {
-		reporter.OnFinished(
-			reporters.ReporterFinishedOptions{
-				Aggregation:  aggregation,
-				HideCoverage: options.HideCoverage,
-				HideSlowest:  options.HideSlowest,
-			},
-		)
+		reporterOptions := reporters.ReporterFinishedOptions{
+			Aggregation:  aggregation,
+			HideCoverage: options.HideCoverage,
+			HideSlowest:  options.HideSlowest,
+			Debug:        options.Debug,
+		}
+
+		for _, reporter := range reporterList {
+			reporter.OnFinished(reporterOptions)
+		}
 	}
 
 	if options.Replay == "" {

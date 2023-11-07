@@ -41,7 +41,7 @@ func read(path string) string {
 	return string(contents)
 }
 
-func replaceSummary(input string) string {
+func normalizeElapsedText(input string) string {
 	re := regexp.MustCompile(`Finished in ([^,]+)`)
 	return re.ReplaceAllString(input, "Finished in 0s")
 }
@@ -119,7 +119,7 @@ func TestRunCommand(t *testing.T) {
 		)
 
 		require.NoError(t, err)
-		require.Equal(t, read("test/expected/run-pass.txt"), replaceSummary(result.stdout))
+		require.Equal(t, read("test/expected/run-pass.txt"), normalizeElapsedText(result.stdout))
 		require.Equal(t, 0, result.exitcode)
 	})
 
@@ -134,7 +134,7 @@ func TestRunCommand(t *testing.T) {
 		)
 
 		require.NoError(t, err)
-		require.Equal(t, read("test/expected/run-fail.txt"), replaceSummary(result.stdout))
+		require.Equal(t, read("test/expected/run-fail.txt"), normalizeElapsedText(result.stdout))
 		require.Contains(t, result.stderr, "exit status 3")
 		require.Equal(t, 1, result.exitcode)
 	})
@@ -150,7 +150,7 @@ func TestRunCommand(t *testing.T) {
 		)
 
 		require.NoError(t, err)
-		require.Equal(t, read("test/expected/run-skip.txt"), replaceSummary(result.stdout))
+		require.Equal(t, read("test/expected/run-skip.txt"), normalizeElapsedText(result.stdout))
 		require.Equal(t, 0, result.exitcode)
 	})
 
@@ -174,7 +174,7 @@ func TestRunCommand(t *testing.T) {
 		require.Equal(
 			t,
 			read("test/expected/run-mixed-color.txt"),
-			replaceSummary(result.stdout),
+			normalizeElapsedText(result.stdout),
 		)
 		require.Contains(t, result.stderr, "exit status 3")
 		require.Equal(t, 1, result.exitcode)
@@ -196,7 +196,7 @@ func TestRunCommand(t *testing.T) {
 		require.Equal(
 			t,
 			read("test/expected/run-mixed-custom-color.txt"),
-			replaceSummary(result.stdout),
+			normalizeElapsedText(result.stdout),
 		)
 		require.Contains(t, result.stderr, "exit status 3")
 		require.Equal(t, 1, result.exitcode)
@@ -220,7 +220,7 @@ func TestRunCommand(t *testing.T) {
 		)
 
 		require.NoError(t, err)
-		require.Equal(t, read("test/expected/run-no-tests.txt"), replaceSummary(result.stdout))
+		require.Equal(t, read("test/expected/run-no-tests.txt"), normalizeElapsedText(result.stdout))
 		require.Equal(t, 0, result.exitcode)
 	})
 
@@ -243,5 +243,26 @@ func TestRunCommand(t *testing.T) {
 
 		require.Contains(t, result.stderr, "exit status 3")
 		require.Equal(t, 1, result.exitcode)
+	})
+
+	t.Run("PostRunCommand", func(t *testing.T) {
+		_, err := run(
+			[]string{"run", "--no-color", "--debug", "--replay", "test/replays/run-mixed.txt", "--post-run-command", "env | grep BOLT | sort > test/tmp/env"},
+			[]string{},
+		)
+
+		require.NoError(t, err)
+
+		content := read("test/tmp/env")
+
+		require.Contains(t, content, "BOLT_TEST_COUNT=10\n")
+		require.Contains(t, content, "BOLT_PASS_COUNT=5\n")
+		require.Contains(t, content, "BOLT_FAIL_COUNT=3\n")
+		require.Contains(t, content, "BOLT_SKIP_COUNT=2\n")
+		require.Contains(t, content, "BOLT_BENCHMARK_COUNT=0\n")
+		require.Contains(t, content, "BOLT_SUMMARY=")
+		require.Contains(t, content, "BOLT_TITLE=Failed!\n")
+		require.Contains(t, content, "BOLT_ELAPSED=")
+		require.Contains(t, content, "BOLT_ELAPSED_NANOSECONDS=")
 	})
 }

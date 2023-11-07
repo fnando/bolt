@@ -11,6 +11,7 @@ Run tests by wrapping "go tests".
     --hide-coverage                    Don't display the coverage section (default to false)
     --hide-slowest                     Don't display the slowest tests section (default to false)
     --no-color                         Disable colored output. When unset, respects the NO_COLOR=1 env var (default to false)
+    --post-run-command=COMMAND         Run a command after runner is done
     --raw                              Don't append arguments to `go test` (default to false)
     --slowest-count=COUNT              Number of slowest tests to show (default to 10)
     --slowest-threshold=THRESHOLD      Anything above this threshold will be listed. Must be a valid duration string (default to 1s)
@@ -77,3 +78,29 @@ Run tests by wrapping "go tests".
     export BOLT_FAIL_SYMBOL=❌
     export BOLT_PASS_SYMBOL=⚡️
     export BOLT_SKIP_SYMBOL=😴
+
+
+  Post run command:
+    You can run any commands after the runner is done by using
+    --post-run-command. The command will receive the following environment
+    variables.
+
+    BOLT_SUMMARY
+      a text summarizing the tests
+    BOLT_TITLE
+      a text that can be used as the title (e.g. Passed!)
+    BOLT_TEST_COUNT
+      a number representing the total number of tests
+    BOLT_FAIL_COUNT
+      a number representing the total number of failed tests
+    BOLT_PASS_COUNT
+      a number representing the total number of passing tests
+    BOLT_SKIP_COUNT
+      a number representing the total number of skipped tests
+    BOLT_BENCHMARK_COUNT
+      a number representing the total number of benchmarks
+    BOLT_ELAPSED
+      a string representing the duration (e.g. 1m20s)
+    BOLT_ELAPSED_NANOSECONDS
+      an integer string representing the duration in nanoseconds
+

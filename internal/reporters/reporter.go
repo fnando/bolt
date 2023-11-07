@@ -13,4 +13,5 @@ type ReporterFinishedOptions struct {
 	Aggregation  *c.Aggregation
 	HideCoverage bool
 	HideSlowest  bool
+	Debug        bool
 }
