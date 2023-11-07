@@ -1,9 +1,23 @@
-# bolt
+<p align="center">
+  <picture>
+    <source width="200" media="prefers-color-scheme(dark)" src="https://github.com/fnando/bolt/raw/main/bolt-dark.png"></source>
+    <img width="200" src="https://github.com/fnando/bolt/raw/main/bolt-light.png" alt="Bolt: a nicer test runner for golang">
+  </picture>
+</p>
 
-[![Latest release](https://img.shields.io/github/v/release/fnando/bolt?label=version)](https://github.com/fnando/bolt/releases/latest)
-[![Tests](https://github.com/fnando/bolt/actions/workflows/tests.yml/badge.svg)](https://github.com/fnando/bolt/actions/workflows/tests.yml)
+<p align="center">
+  A nicer test runner for golang.
+</p>
 
-A better format output for golang's tests.
+<p align="center">
+  <a href="https://github.com/fnando/bolt/releases/latest">
+    <img src="https://img.shields.io/github/v/release/fnando/bolt?label=version" alt="Latest release">
+  </a>
+
+  <a href="https://github.com/fnando/bolt/actions/workflows/tests.yml">
+    <img src="https://github.com/fnando/bolt/actions/workflows/tests.yml/badge.svg" alt="Tests">
+  </a>
+</p>
 
 We've all been there... a bunch of tests failing and you have no idea where to
 start, because everything looks the same. And that one test failing in the sea
@@ -29,7 +43,7 @@ Features:
 
 Download the binary for your system from the
 [latest release](https://github.com/fnando/bolt/releases/latest) and place it
-anywhere on your path.
+anywhere on your path (you'll need to make it executable with `chmod +x`).
 
 ## Usage
 
