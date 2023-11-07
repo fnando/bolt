@@ -110,6 +110,22 @@ export BOLT_PASS_SYMBOL=⚡️
 export BOLT_SKIP_SYMBOL=😴
 ```
 
+### Post Run Command
+
+You can run any commands after the runner is done by using `--post-run-command`.
+The command will receive the following environment variables.
+
+- `BOLT_SUMMARY:` a text summarizing the tests
+- `BOLT_TITLE:` a text that can be used as the title (e.g. Passed!)
+- `BOLT_TEST_COUNT:` a number representing the total number of tests
+- `BOLT_FAIL_COUNT:` a number representing the total number of failed tests
+- `BOLT_PASS_COUNT:` a number representing the total number of passing tests
+- `BOLT_SKIP_COUNT:` a number representing the total number of skipped tests
+- `BOLT_BENCHMARK_COUNT:` a number representing the total number of benchmarks
+- `BOLT_ELAPSED:` a string representing the duration (e.g. 1m20s)
+- `BOLT_ELAPSED_NANOSECONDS:` an integer string representing the duration in
+  nanoseconds
+
 ## Code of Conduct
 
 Everyone interacting in the bolt project’s codebases, issue trackers, chat rooms
