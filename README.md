@@ -1,6 +1,6 @@
 <p align="center">
   <picture>
-    <source width="200" media="prefers-color-scheme(dark)" src="https://github.com/fnando/bolt/raw/main/bolt-dark.png"></source>
+    <source width="200" media="(prefers-color-scheme: dark)" srcset="https://github.com/fnando/bolt/raw/main/bolt-dark.png"></source>
     <img width="200" src="https://github.com/fnando/bolt/raw/main/bolt-light.png" alt="Bolt: a nicer test runner for golang">
   </picture>
 </p>
@@ -10,13 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/fnando/bolt/releases/latest">
-    <img src="https://img.shields.io/github/v/release/fnando/bolt?label=version" alt="Latest release">
-  </a>
-
-  <a href="https://github.com/fnando/bolt/actions/workflows/tests.yml">
-    <img src="https://github.com/fnando/bolt/actions/workflows/tests.yml/badge.svg" alt="Tests">
-  </a>
+  <a href="https://github.com/fnando/bolt/releases/latest"><img src="https://img.shields.io/github/v/release/fnando/bolt?label=version" alt="Latest release"></a> <a href="https://github.com/fnando/bolt/actions/workflows/tests.yml"><img src="https://github.com/fnando/bolt/actions/workflows/tests.yml/badge.svg" alt="Tests"></a>
 </p>
 
 We've all been there... a bunch of tests failing and you have no idea where to
@@ -29,7 +23,10 @@ easy!
 
 Here's the before and after:
 
-![An image showing the comparison between the native output versus bolt's](https://github.com/fnando/bolt/raw/main/bolt.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/fnando/bolt/raw/main/bolt-screenshot-dark.png"></source>
+  <img src="https://github.com/fnando/bolt/raw/main/bolt-screenshot-light.png" alt="A screenshot showing the comparison between the native output versus bolt's">
+</picture>
 
 Features:
 
